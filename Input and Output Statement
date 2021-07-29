@@ -1,0 +1,771 @@
+Java Output Formatting
+QUESTION DESCRIPTION
+
+Java's System.out.printf function can be used to print formatted output. The purpose of this exercise is to test your understanding of formatting output using printf.
+
+To get you started, a portion of the solution is provided for you in the editor; you must format and print the input to complete the solution.
+
+Input Format
+
+Every line of input will contain a String followed by an integer.
+Each String will have a maximum of alphabetic characters, and each integer will be in the inclusive range from to .
+
+Output Format
+
+In each line of output there should be two columns:
+The first column contains the String and is left justified using exactly characters.
+The second column contains the integer, expressed in exactly digits; if the original input has less than three digits, you must pad your output's leading digits with zeroes.
+Each String is left-justified with trailing whitespace through the first characters. The leading digit of the integer is the character, and each integer that was less than digits now has leading zeroes.
+TEST CASE 1
+
+INPUT
+DSP 45
+POC 79
+Maths 99
+OUTPUT
+DSP 045
+POC 079
+Maths 099
+TEST CASE 2
+
+INPUT
+SS 5
+TOC 79
+CA 19
+OUTPUT
+SS 05
+TOC 079
+CA 019
+************************************************************************************
+CODING:
+import java.io.*;
+import java.util.Scanner;
+public class TestClass {
+	 public static void main(String[] args) { 
+       
+       Scanner sc = new Scanner(System.in);
+       for(int i=0;i<3;i++)
+        {
+            String str = sc.next();
+            int x = sc.nextInt();
+            System.out.printf("%s 0%d%n", str, x);
+        }
+       
+	}
+}
+************************************************************************************
+************************************************************************************
+Hello World
+QUESTION DESCRIPTION
+
+Write a java program to declare a string and get input for that string from the user and display the string as output.
+TEST CASE 1
+
+INPUT
+Hello
+OUTPUT
+Hello
+TEST CASE 2
+
+INPUT
+JAVA
+OUTPUT
+JAVA
+**********************************************************************************
+CODING:
+import java.util.*;
+public class TestClass {
+	 public static void main(String[] args) {
+       String a;
+     Scanner sc = new Scanner(System.in);
+     a = sc.nextLine();
+       System.out.println(""+a);
+	}
+}
+************************************************************************************
+************************************************************************************
+ Finding runway length
+ QUESTION DESCRIPTION
+
+Given an airplane acceleration a and take-off speed v, you can compute the minimum runway length needed for an airplane to
+take off using the following formula:
+v^2
+length = ------
+2a
+Use Double Data Type and
+
+String.format(" %.2f", outputValue);
+TEST CASE 1
+
+INPUT
+60
+23
+OUTPUT
+78.26
+TEST CASE 2
+
+INPUT
+70
+45
+OUTPUT
+54.44
+**************************************************************************
+CODING:
+import java.util.*;
+public class TestClass {
+	 public static void main(String[] args) { 
+	Scanner sc = new Scanner(System.in);
+    float v = sc.nextFloat();
+    float a = sc.nextFloat();
+    double length = Math.pow(v,2)/(2*a);
+    System.out.format("%.2f",length);
+	}
+}
+************************************************************************
+************************************************************************
+Input and print
+QUESTION DESCRIPTION
+
+Write a program that asks the user's name, and then greets the user by name. Before outputting the user's name, convert it to upper case letters. For example, if the user's name is Fred, then the program should respond "Hello, FRED, nice to meet you!".
+TEST CASE 1
+
+INPUT
+rishwanth
+OUTPUT
+Hello,rishwanth,nice to meet you!
+TEST CASE 2
+
+INPUT
+vanu
+OUTPUT
+Hello,vanu,nice to meet you!
+************************************************************************
+CODING:
+import java.util.*;
+public class TestClass {
+	 public static void main(String[] args) { 
+       String a;
+       Scanner sc = new Scanner(System.in);
+       a=sc.nextLine();
+       System.out.println("Hello," + a + ",nice to meet you!");
+		
+	}
+}
+************************************************************************
+************************************************************************
+Simple Array Sum
+QUESTION DESCRIPTION
+
+Given an array of integers, can you find the sum of its elements?
+
+Input Format
+
+The first line contains an integer, , denoting the size of the array.
+The second line contains space-separated integers representing the array's elements.
+
+Output Format
+
+Print the sum of the array's elements as a single integer.
+
+Sample Input
+
+6
+1 2 3 4 10 11
+
+Sample Output
+
+31
+
+Explanation
+
+We print the sum of the array's elements, which is: .
+TEST CASE 1
+
+INPUT
+3
+11 12 13
+OUTPUT
+36
+TEST CASE 2
+
+INPUT
+4
+11 12 13 14
+OUTPUT
+50
+********************************************************************
+CODING:
+import java.util.*;
+public class TestClass {
+	 public static void main(String[] args) { 
+     Scanner sc = new Scanner(System.in);
+     int length = sc.nextInt();
+     int sum = 0;
+     for(int i = 0; i < length; i++) {
+     sum += sc.nextInt();
+     }
+     System.out.println(sum);
+    }
+}
+*********************************************************************
+*********************************************************************
+Units of Time
+QUESTION DESCRIPTION
+
+Create a program that reads a duration from the user as a number of days, hours, minutes, and seconds. Compute and display the total number of seconds represented
+by this duration.
+TEST CASE 1
+
+INPUT
+6
+12
+34
+45
+OUTPUT
+The Total Seconds for 6 days 12 hours 34 minutes 45 seconds is 563685
+TEST CASE 2
+
+INPUT
+9
+20
+23
+25
+OUTPUT
+The Total Seconds for 9 days 20 hours 23 minutes 25 seconds is 851005
+********************************************************************************
+CODING:
+import java.io.*;
+import java.util.Scanner;
+public class TestClass {
+	 public static void main(String[] args) { 
+		
+       Scanner sc = new Scanner(System.in);
+       int days = sc.nextInt();
+       int hours = sc.nextInt();
+       int minutes = sc.nextInt();
+       int seconds = sc.nextInt();
+       
+       
+       int Total = (days * 86400) + (hours * 3600) + (minutes * 60) + seconds;
+       
+       System.out.printf("The Total Seconds for %d days %d hours %d minutes %d seconds is %d",days, hours, minutes, seconds, Total);
+	}
+} 
+************************************************************************************
+************************************************************************************
+Triangle Valid or Not
+QUESTION DESCRIPTION
+
+Write a program to check whether a triangle is valid or not, when the three angles of the triangle are the inputs. A triangle is valid if the sum of all the three angles is equal to 180 degrees.
+TEST CASE 1
+
+INPUT
+30 40 110
+OUTPUT
+YES
+TEST CASE 2
+
+INPUT
+56 67 80
+OUTPUT
+NO
+***********************************************************************************
+CODING:
+import java.util.*;
+public class TestClass {
+	 public static void main(String[] args) { 
+     int a , b, c, sum;
+     Scanner sc = new Scanner(System.in);
+     a=sc.nextInt();
+     b=sc.nextInt();
+     c=sc.nextInt();
+     sum = a+b+c;
+     if(sum == 180){
+       System.out.println("YES");
+     }
+     else{
+       System.out.println("NO");
+     }
+     
+	}
+}
+************************************************************************************
+************************************************************************************
+SWAP NUMBERS
+QUESTION DESCRIPTION
+
+Ayan is a kid like to play with numbers. He usually confuse his friends by swapping numbers
+Let us help ayan to swap numbers by writing a program.
+If the input is n1 is 100 and n2 is 200 then after swaping output will be n1 is 200 and n2 is 100.
+You should use any temporary variable to swap the numbers.
+TEST CASE 1
+
+INPUT
+10 20
+OUTPUT
+After swapping the value of a and b is: 20 10
+TEST CASE 2
+
+INPUT
+110 20
+OUTPUT
+After swapping the value of a and b is: 20 110
+***************************************************************************************
+CODING:
+import java.util.*;
+public class TestClass {
+	 public static void main(String[] args) { 
+        int a,b,t;
+       Scanner sc = new Scanner(System.in);  
+       a = sc.nextInt();  
+       b = sc.nextInt();  
+       t = a;  
+       a = b;  
+       b = t;  
+       System.out.println("After swapping the value of a and b is: "+a +" " + b);  
+       System.out.println();  
+    }    
+} 
+******************************************************************************************
+******************************************************************************************
+Perimeter of a Circle.
+QUESTION DESCRIPTION
+
+write a java coding to Find Perimeter of Circle .
+Get the radius of Circle at runtime
+calculate the perimeter of circle and display the value.
+
+Note: Display only two digits after decimal point
+
+Sample Input
+6.5
+
+Sample Output
+Perimeter of Circle : 40.82
+TEST CASE 1
+
+INPUT
+5.5
+OUTPUT
+Perimeter of Circle : 34.54
+TEST CASE 2
+
+INPUT
+12.0
+OUTPUT
+Perimeter of Circle : 75.36
+*********************************************************************
+CODING:
+import java.util.*;
+public class TestClass {
+	 public static void main(String[] args) { 
+     	 Scanner sc= new Scanner(System.in);
+     	 double r= sc.nextDouble();
+         
+	 double  c=(2*3.14*r) ;
+      
+	 System.out.format("Perimeter of Circle : %.2f ",c);      
+   }
+}
+****************************************************************************
+****************************************************************************
+Devu and friendship testing
+QUESTION DESCRIPTION
+
+Devu has n weird friends. Its his birthday today, so they thought that this is the best occasion for testing their friendship with him. They put up conditions before Devu that they will break the friendship unless he gives them a grand party on their chosen day. Formally, ith friend will break his friendship if he does not receive a grand party on dith day.
+
+Devu despite being as rich as Gatsby, is quite frugal and can give at most one grand party daily. Also, he wants to invite only one person in a party. So he just wonders what is the maximum number of friendships he can save. Please help Devu in this tough task !!
+
+Input
+
+The first line of the input contains an integer T denoting the number of test cases. The description of T test cases follows.
+First line will contain a single integer denoting n.
+Second line will contain n space separated integers where ith integer corresponds to the day dith as given in the problem.
+Output
+
+Print a single line corresponding to the answer of the problem.
+
+Constraints
+
+1<=T <=104
+1 <=n<=50
+1<=di<=100
+TEST CASE 1
+
+INPUT
+2
+2
+3 2
+2
+1 1
+OUTPUT
+2
+1
+TEST CASE 2
+
+INPUT
+2
+2
+11 7
+2
+0 1
+OUTPUT
+2
+2
+***********************************************************************
+CODING:
+import java.util.*;
+public class TestClass {
+	 public static void main(String[] args) { 
+	    Scanner sc=new Scanner(System.in);
+	    int t=sc.nextInt();
+	    for(int i=0;i<t;i++)
+	    {
+	        HashSet<Integer>h=new HashSet<>();
+	        int n=sc.nextInt();
+	        for(int j=0;j<n;j++)
+	        {
+	       int x=sc.nextInt();
+	       h.add(x);
+	    }
+	    int y=h.size();
+	    System.out.println(y);
+	    }
+	}
+}
+**************************************************************************
+**************************************************************************
+Kitchen Timetable
+QUESTION DESCRIPTION
+
+There are N students living in the dormitory of Berland State University. Each of them sometimes wants to use the kitchen, so the head of the dormitory came up with a timetable for kitchen's usage in order to avoid the conflicts:
+
+The first student starts to use the kitchen at the time 0 and should finish the cooking not later than at the time A1.
+The second student starts to use the kitchen at the time A1 and should finish the cooking not later than at the time A2.
+And so on.
+The N-th student starts to use the kitchen at the time AN-1 and should finish the cooking not later than at the time AN
+The holidays in Berland are approaching, so today each of these N students wants to cook some pancakes. The i-th student needs Bi units of time to cook.
+
+The students have understood that probably not all of them will be able to cook everything they want. How many students will be able to cook without violating the schedule?
+
+Input
+
+The first line of the input contains an integer T denoting the number of test cases. The description of T test cases follows.
+
+The first line of each test case contains a single integer N denoting the number of students.
+
+The second line contains N space-separated integers A1, A2, ..., AN denoting the moments of time by when the corresponding student should finish cooking.
+
+The third line contains N space-separated integers B1, B2, ..., BN denoting the time required for each of the students to cook.
+
+Output
+
+For each test case, output a single line containing the number of students that will be able to finish the cooking.
+
+Constraints
+
+Should contain all the constraints on the input data that you may have. Format it like:
+
+1<=T <=10
+1 <=N <=104
+0<=A1<= A2 < ... < AN < 109
+1 <=Bi <=109
+TEST CASE 1
+
+INPUT
+2
+3
+1 10 15
+1 10 3
+3
+10 20 30
+15 5 20
+OUTPUT
+2
+1
+TEST CASE 2
+
+INPUT
+2
+3
+1 5 15
+1 5 3
+3
+10 50 30
+15 10 10
+OUTPUT
+2
+1
+******************************************************************
+CODING:
+import java.util.*;
+public class TestClass {
+	 public static void main(String[] args) { 
+	    int cook;
+	    int Students,times[];
+	    Scanner sc = new Scanner(System.in);
+	    byte testCases = sc.nextByte();
+	    while(testCases-- > 0)
+	    {
+	         cook=0;
+	         Students=sc.nextInt();
+	         times=new int[Students+1];
+	         times[0]=0;
+	         for(int i=1;i<times.length;i++)
+	             times[i]=sc.nextInt();
+	         for(int i=0;i<times.length-1;i++)
+	         {
+	             if(times[i+1]-times[i] >= sc.nextInt())
+	                cook++;
+	         }
+	         System.out.println(cook);
+	    }
+	}
+}
+*********************************************************************
+*********************************************************************
+One more weird game
+QUESTION DESCRIPTION
+
+Leha is playing a very interesting game. The game will be played on a rectangular grid consisting of N rows and M columns. Initially all the cells of the grid are uncolored.
+
+Leha's initial score is zero. At each turn, he chooses some cell that is yet not colored, and colors that cell. The score obtained in this step will be number of neighboring colored cells of the cell that Leha colored in this step. Two cells are neighbors of each other if they share a side between them. The game will end when all the cells are colored. Finally, total score obtained at the end of the game will sum of score obtained in each turn.
+
+Leha wants to know what maximum score he can get? Can you please help him in finding this out?
+
+Input
+
+The first line contains a single integer T denoting the number of test cases. T test cases follow.
+
+Each of the following T lines contains two space-separated integers N, M denoting the dimensions of the grid.
+
+Output
+
+For each test case, output a single line containing an integer corresponding to the maximal possible score Leha can obtain.
+
+Constraints
+
+1<=T <=100
+1<= N, M <=1 000
+TEST CASE 1
+
+INPUT
+1
+2 2
+OUTPUT
+4
+TEST CASE 2
+
+INPUT
+1
+17 28
+OUTPUT
+907
+*******************************************************************************
+CODING:
+import java.util.*;
+public class TestClass {
+	 public static void main(String[] args) { 
+		Scanner sc=new Scanner(System.in);
+		int t=sc.nextInt();
+		while(t-->0)
+		{
+		    int n=sc.nextInt();
+		    int m=sc.nextInt();
+		    int a=((n*(m-1))+(m*(n-1)));
+		    System.out.println(a);
+		}
+	}
+}
+**********************************************************************************
+**********************************************************************************
+Sequence (Longest Progressive Sequence)
+QUESTION DESCRIPTION
+
+A sequence is said to be progressive if it doesnt decrease at any point in time.
+For example 1 1 2 2 is a progressive sequence but 1 2 1 is not a progressive sequence. Let S be the sequence and be represented by L spaced integers Ki, now your task is to find out the first longest progressive sequence present in the given sequence (S).
+TEST CASE 1
+
+INPUT
+4                                     
+1 1 2 1
+OUTPUT
+1 1 2
+TEST CASE 2
+
+INPUT
+5
+1 2 1 2 2
+OUTPUT
+1 2 2
+************************************************************************************
+CODING:
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class TestClass {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        ArrayList<Integer> ls = new ArrayList<Integer>();
+        Integer[] temp = new Integer[0];
+        for (int i = 0; i < t; i++) {
+            int num = sc.nextInt();
+            if (!(ls.isEmpty())) {
+                if (num >=ls.get(ls.size()-1 )) {
+                    
+                    ls.add(num);
+                } else {
+                   
+                    if(ls.size()>temp.length)
+                    temp=ls.toArray(temp);
+                    ls.clear();
+                    ls.add(num);
+                }
+                
+            } else {
+                ls.add(num);
+            }
+        }
+      
+        if(ls.size()>temp.length)
+        {
+            temp=ls.toArray(temp);
+        ls.clear();
+        }
+            for (int i = 0; i < temp.length; i++) {
+            if(i<temp.length-1)
+            System.out.print(temp[i]+" ");
+            else
+                System.out.println(temp[i]);
+
+        }
+        
+    }
+}
+**********************************************************************************
+**********************************************************************************
+decimal into a binary number using stack
+QUESTION DESCRIPTION
+
+TO Convert a decimal into a binary number using stack.
+TEST CASE 1
+
+INPUT
+2
+OUTPUT
+10
+TEST CASE 2
+
+INPUT
+15
+OUTPUT
+1111
+********************************************************************
+CODING:
+import java.util.*;
+ 
+public class TestClass
+  
+{
+    public static void main(String[] args) 
+    {    
+        Scanner sc = new Scanner(System.in);
+        Stack<Integer> stk = new Stack<Integer>();
+        int num = sc.nextInt();
+        while (num != 0)
+        {
+            int d = num % 2;
+            stk.push(d);
+            num /= 2;
+        }        
+        System.out.print("");
+        while (!(stk.isEmpty() ))
+        {
+            System.out.print(stk.pop());
+        }
+        System.out.println();
+    }
+}
+**************************************************************************************
+**************************************************************************************
+Sum of divisors
+QUESTION DESCRIPTION
+
+Given a natural number, calculate sum of all its proper divisors. A proper divisor of a natural number is the divisor that is strictly less than the number.
+
+For example, number 20 has 5 proper divisors: 1, 2, 4, 5, 10, and the divisor summation is: 1 + 2 + 4 + 5 + 10 = 22.
+
+Examples:
+
+Input : num = 10
+Output: 8
+// proper divisors 1 + 2 + 5 = 8
+
+Input : num = 36
+Output: 55
+// proper divisors 1 + 2 + 3 + 4 + 6 + 9 + 12 + 18 = 55
+
+Input:
+
+The first line of input contains an integer T denoting the number of test cases.
+The first line of each test case is N.
+
+Output:
+Print sum of divisors of N.
+
+
+Constraints:
+1 T 200
+2 N 1000
+TEST CASE 1
+
+INPUT
+1
+6
+OUTPUT
+6
+TEST CASE 2
+
+INPUT
+5
+10
+23
+190
+234
+559
+OUTPUT
+8
+1
+170
+312
+57
+*************************************************************************
+CODING:
+import java.util.*;
+public class TestClass{
+	public static void main (String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+		int t=sc.nextInt();
+		while(t-->0)
+		{
+		    int n=sc.nextInt();
+		    int ans=0;
+		    for(int i=1;i<n;i++)
+		    {
+		        if(n%i==0)
+		        {
+		            ans=ans+i;
+		        }
+		    }
+		    System.out.println(ans);
+		}
+	}
+}
+***************************************************************************
+***************************************************************************
+
+
+
