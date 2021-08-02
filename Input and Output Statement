@@ -766,6 +766,58 @@ public class TestClass{
 }
 ***************************************************************************
 ***************************************************************************
+Java program to get student details.
+QUESTION DESCRIPTION
 
+In this program we will read student details like name, roll number, marks in math, physics and English then print the student details with name, roll number, inputted marks, total marks and percentage.
+TEST CASE 1
+
+INPUT
+Mike
+101
+88 77 99
+OUTPUT
+Name=Mike
+Roll Number=101
+Marks=88 77 99
+Total=264
+Percentage=88.0
+TEST CASE 2
+
+INPUT
+shiva
+9130713
+65 75 68
+OUTPUT
+Name=shiva
+Roll Number=9130713
+Marks=65 75 68
+Total=208
+Percentage=69.33333333333333
+***********************************************************************
+CODING:
+import java.io.*;
+import java.util.Scanner;
+public class TestClass {
+	 public static void main(String[] args) 
+     { 
+	Scanner sc = new Scanner(System.in)	;
+       String Str = sc.nextLine();
+       int roll = sc.nextInt();
+       int m = sc.nextInt();int e = sc.nextInt();int p = sc.nextInt();
+       int tot = m+e+p;
+       double per = (double)tot/3;
+       System.out.printf("Name=");//Str);
+       System.out.println(Str);
+       System.out.printf("Roll Number=%d\n",roll);
+       System.out.printf("Marks=%d %d %d\n",m,e,p);
+       System.out.printf("Total=%d\n",tot);
+       System.out.printf("Percentage=");
+       System.out.println(per);//(String.format("%.01f",per));
+       
+	}
+}
+*******************************************************************************
+*******************************************************************************
 
 
