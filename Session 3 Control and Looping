@@ -1,0 +1,676 @@
+Jumping on the Clouds
+QUESTION DESCRIPTION
+
+Emma is playing a new mobile game involving n clouds numbered from 0 to n-1 . A player initially starts out on cloud c0, and they must jump to cloud cn-1. In each step, she can jump from any cloud i to cloud i+1 or cloud i+2 .
+
+There are two types of clouds, ordinary clouds and thunderclouds. The game ends if Emma jumps onto a thundercloud, but if she reaches the last cloud (i.e.,cn-1 ), she wins the game!
+
+Can you find the minimum number of jumps Emma must make to win the game? It is guaranteed that clouds c0 and cn-1 are ordinary-clouds and it is always possible to win the game.
+
+Input Format
+
+The first line contains an integer, (the total number of clouds).
+
+The second line contains space-separated binary integers describing clouds .
+
+If ci=0 , the ith cloud is an ordinary cloud.
+
+If ci=1 , the ith cloud is a thundercloud.
+
+Constraints
+
+2 <= n < 100
+ci belongs {0,1}
+c0 = cn-1=0
+
+Output Format
+
+Print the minimum number of jumps needed to win the game.
+TEST CASE 1
+
+INPUT
+7
+0 0 1 0 0 1 0
+OUTPUT
+4
+TEST CASE 2
+
+INPUT
+6
+0 0 0 0 1 0
+OUTPUT
+3
+##############CODE###############
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+public class TestClass {
+public static void main(String[] args) {
+ Scanner in = new Scanner(System.in);
+ int n = in.nextInt();
+ int c[] = new int[n];
+ for(int c_i=0; c_i < n; c_i++){
+ c[c_i] = in.nextInt();
+ }
+  findMinimumJumps(c);
+ }
+  public static void findMinimumJumps(int[] arr){
+ int count = 0;
+ int i = 0;
+ while(i < arr.length-1){
+ if(i+2 < arr.length && arr[i + 2] == 0){
+ i = i + 2;
+ count++;
+ }
+ else{
+ i++;
+ count++;
+ }
+ }
+ System.out.println(count);
+ }
+}
+------------------------------------------------------------------------------------
+PATTERNS - L9
+QUESTION DESCRIPTION
+
+Write a java program to display the following patterns
+TEST CASE 1
+
+INPUT
+7
+OUTPUT
+1 
+1 2 1 
+1 2 3 2 1 
+1 2 3 4 3 2 1 
+1 2 3 4 5 4 3 2 1 
+1 2 3 4 5 6 5 4 3 2 1 
+1 2 3 4 5 6 7 6 5 4 3 2 1
+TEST CASE 2
+
+INPUT
+4
+OUTPUT
+1 
+1 2 1 
+1 2 3 2 1 
+1 2 3 4 3 2 1
+###############CODE###############
+import java.util.*;
+ public class TestClass
+{
+   public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        int rows = sc.nextInt();
+        for (int i = 1; i <= rows; i++) {
+        for (int j = 1; j <= i; j++) 
+        { 
+        System.out.print(j+" "); 
+        }
+        for (int j = i-1; j >= 1; j--)
+        {
+        System.out.print(j+" ");
+        }
+        System.out.println();
+        }
+        sc.close();
+    }
+}
+--------------------------------------------------------------------------
+Compare two strings lexicographically
+QUESTION DESCRIPTION
+
+Write a java program to compare two strings lexicographically
+
+If the strings are equal then mentions as follows:
+
+Input 1:
+
+SRM
+SRM
+
+Output:
+
+SRM is equal to SRM
+TEST CASE 1
+
+INPUT
+SRM UNIVERSITY
+SRM
+OUTPUT
+SRM UNIVERSITY is greater than SRM
+TEST CASE 2
+
+INPUT
+SRM
+SRM UNIVERSITY
+OUTPUT
+SRM is less than SRM UNIVERSITY
+###############CODE###############
+import java.io.*;
+import java.util.Scanner;
+public class TestClass {
+	 public static void main(String[] args) { 
+		Scanner sc=new Scanner(System.in);
+       String s1=sc.nextLine();
+       String s2=sc.nextLine();
+       int res=s1.compareTo(s2);
+       if (res>0)
+         System.out.println(s1+ " is greater than " + s2);
+       else if (res<0)
+         System.out.println(s1+ " is less than " + s2);
+       else
+         System.out.println(s1+ " is equal to " + s2);
+	}
+}
+-----------------------------------------------------------------------
+Radius of Earth
+QUESTION DESCRIPTION
+
+Write a Java program to compute the distance between two points on the surface of earth.
+
+x1 = Math.toRadians(lat1)
+y1 = Math.toRadians(lon1)
+x2 = Math.toRadians(lat2)
+x3 = Math.toRadians(lon2)
+
+Distance between the two points [ (x1,y1) & (x2,y2)]
+
+d = radius * arccos(sin(x1) * sin(x2) + cos(x1) * cos(x2) * cos(y1 - y2))
+
+Radius of the earth r = 6371.01 Kilometers
+
+Mandatory:
+
+1. Create a new class "Sample" and a method named "distanceBetweenTwoPoints()" of type double
+
+2. The method should take four arguments with double data type
+
+public double distanceBetweenTwoPoints(double lat1, double lon1, double lat2, double lon2)
+
+Methodname = distanceBetweenTwoPoints
+Argument = Four Arguments - double lat1, double lon1, double lat2, double lon2 of type double with variable names mentioned in the argument
+Access Specifier = public
+Return Type = double
+
+
+3. Access the method "public double distanceBetweenTwoPoints(double lat1,double lon1,double lat2,double lon2)" inside the main method under main class (TestClass)
+
+4. Use return to pass the final value computed in distanceBetweenTwoPoints to the main method
+
+5. The final answer should be rounded using String.format("%.02f", variablename)
+
+TEST CASE 1
+
+INPUT
+25 35 35.5 25.5
+OUTPUT
+1480.08
+TEST CASE 2
+
+INPUT
+12 28 13.5 12.3
+OUTPUT
+1710.55
+###############CODE###############
+import java.io.*;
+import java.util.Scanner;
+class Sample{
+	public double distanceBetweenTwoPoints(double lat1,double lon1,double lat2,double lon2){
+    	double x1=Math.toRadians(lat1);
+      	double y1=Math.toRadians(lon1);
+      	double x2=Math.toRadians(lat2);
+      	double y2=Math.toRadians(lon2);
+      	double radiusEarth=6371.01;
+        double d=radiusEarth*Math.acos(Math.sin(x1)*Math.sin(x2)+Math.cos(x1)*Math.cos(x2)*Math.cos(y1-y2));
+      	return d;
+    }
+}
+public class TestClass {
+	 public static void main(String[] args) { 
+		Sample s=new Sample();
+        Scanner sc=new Scanner(System.in);
+        double distance=s.distanceBetweenTwoPoints(sc.nextDouble(),sc.nextDouble(),sc.nextDouble(),sc.nextDouble());
+        System.out.println(String.format("%.02f",distance));
+	}
+} 
+----------------------------------------------------------------------------------------------------------
+Swapping
+QUESTION DESCRIPTION
+
+Swap two number using bitwise
+
+Note:
+Use ^ (XOR) operator for this.operator
+TEST CASE 1
+
+INPUT
+23
+45
+OUTPUT
+After Swap i=45 j=23
+TEST CASE 2
+
+INPUT
+12
+3
+OUTPUT
+After Swap i=3 j=12
+###############CODE###############
+import java.util.*;  
+public class TestClass{  
+public static void main(String args[])  
+{  
+int i, j;  
+Scanner scanner = new Scanner(System.in);  
+i = scanner.nextInt();  
+j = scanner.nextInt();  
+i = i ^ j;  
+j = i ^ j;  
+i = i ^ j;  
+System.out.println("After Swap i=" +i +" j=" +j);  
+
+}  
+}
+-----------------------------------------------------------------------------
+PATTERNS - L17
+QUESTION DESCRIPTION
+
+Write a java program to display the following patterns
+TEST CASE 1
+
+INPUT
+5
+OUTPUT
+1 
+2 3 
+4 5 6 
+7 8 9 10 
+11 12 13 14 15
+TEST CASE 2
+
+INPUT
+6
+OUTPUT
+1 
+2 3 
+4 5 6 
+7 8 9 10 
+11 12 13 14 15 
+16 17 18 19 20 21
+###############CODE###############
+import java.util.*;
+  
+public class TestClass 
+{    
+    public static void main(String[] args) 
+    {
+      Scanner sc = new Scanner(System.in);
+      int noOfRows = sc.nextInt();
+      int value = 1;
+      for (int i=1;i<=noOfRows;i++) 
+      {
+        for (int j=1; j<=i;j++) 
+        {
+          System.out.print(value+" ");
+          value++;
+        }
+        System.out.println();
+        }
+    }    
+}
+-----------------------------------------------------------------------------------------------
+progressive sequence
+QUESTION DESCRIPTION
+
+A sequence is said to be progressive if it doesnt decrease at any point in time. For example 1 1 2 2 is a progressive sequence but 1 2 1 is not a progressive sequence. Let S be the sequence and be represented by L spaced integers Ki, now your task is to find out the first longest progressive sequence present in the given sequence (S).
+
+Input Format:
+First line will contain T, the length of the sequence and next line will contain T spaced integers Ki (where i = 0,1, ,L).
+Line 1 T,where T is the length of the sequence Line 2 Ki,where Ki is integer in sequence separated by space
+Constraints: 1<=T<=10^6(one million) 1<=Ki<=10^9(one billion)
+
+Output Format: Line 1 longest progressive sequence present in the given sequence.
+TEST CASE 1
+
+INPUT
+5
+4 1 1 2 1
+OUTPUT
+1 1 2
+TEST CASE 2
+
+INPUT
+5
+4 1 3 1 2
+OUTPUT
+1 3
+###############CODE###############
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class TestClass {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        ArrayList<Integer> ls = new ArrayList<Integer>();
+        Integer[] temp = new Integer[0];
+        for (int i = 0; i < t; i++) {
+            int num = sc.nextInt();
+            if (!(ls.isEmpty())) {
+                if (num >=ls.get(ls.size()-1 )) {
+                    
+                    ls.add(num);
+                } else {
+                   
+                    if(ls.size()>temp.length)
+                    temp=ls.toArray(temp);
+                    ls.clear();
+                    ls.add(num);
+                }
+                
+            } else {
+                ls.add(num);
+            }
+        }
+      
+        if(ls.size()>temp.length)
+        {
+            temp=ls.toArray(temp);
+        ls.clear();
+        }
+            for (int i = 0; i < temp.length; i++) {
+            if(i<temp.length-1)
+            System.out.print(temp[i]+" ");
+            else
+                System.out.println(temp[i]);
+
+        }
+        
+    }
+}
+-------------------------------------------------------------------------------------------------
+PALINDROME OR NOT
+QUESTION DESCRIPTION
+
+Java program to Read Number from Console and Check if it is a Palindrome Number
+TEST CASE 1
+
+INPUT
+121
+OUTPUT
+121 is a palindrome number
+TEST CASE 2
+
+INPUT
+625
+OUTPUT
+625 is not a palindrome number
+###############CODE###############
+import java.io.*;
+import java.util.Scanner;
+public class TestClass
+{
+    public static void main(String args[])
+    {
+        int num, rem, orig, rev=0;
+        Scanner scan = new Scanner(System.in);
+		
+        System.out.print(" ");
+        num = scan.nextInt();
+		
+        orig = num;
+		
+        while(num != 0)
+        {
+            rem = num%10;
+            rev = rev*10 + rem;
+            num = num/10;
+        }
+        
+        
+        if(rev==orig)
+        {
+            System.out.print(""+orig+" is a palindrome number ");
+        }
+        else
+        {
+            System.out.print(""+orig+ " is not a palindrome number");
+        }
+    }
+}
+-----------------------------------------------------------------------------------
+GCD AND LCM
+QUESTION DESCRIPTION
+
+Java Program to Find the GCD and LCM of two Numbers
+TEST CASE 1
+
+INPUT
+15
+25
+OUTPUT
+The GCD of two numbers is: 5
+The LCM of two numbers is: 75
+TEST CASE 2
+
+INPUT
+5
+8
+OUTPUT
+The GCD of two numbers is: 1
+The LCM of two numbers is: 40
+###############CODE###############
+import java.io.*;
+import java.util.*;
+public class TestClass{
+  public static void main(String[] args){
+    int n1,n2;
+    int gcd,lcm,remainder,numerator,denominator;
+    Scanner sc = new Scanner(System.in);
+    n1 = sc.nextInt();
+    n2 = sc.nextInt();
+    if(n1>n2)
+    {
+      numerator=n1;
+      denominator=n2;
+    }else{
+      numerator=n2;
+      denominator=n1;
+    }
+    remainder=numerator%denominator;
+    while(remainder!=0)
+    {
+      numerator=denominator;
+      denominator=remainder;
+      remainder=numerator%denominator;
+    }
+    gcd=denominator;
+    lcm=n1*n2/gcd;
+    System.out.println("The GCD of two numbers is: "+gcd);
+    System.out.println("The LCM of two numbers is: "+lcm);
+  }
+}
+---------------------------------------------------------------------------
+PATTERN 3 - CL2
+QUESTION DESCRIPTION
+
+"Write a java program to display the following patterns
+"
+TEST CASE 1
+
+INPUT
+5
+OUTPUT
+*
+**
+***
+****
+*****
+TEST CASE 2
+
+INPUT
+4
+OUTPUT
+*
+**
+***
+****
+###############CODE###############
+import java.io.*;
+import java.util.*;
+public class TestClass {
+	 public static void main(String[] args) { 
+       int i,j,row;
+       Scanner sc = new Scanner(System.in);
+       row = sc.nextInt();
+       for(i=0;i<row;i++)
+       {
+         for(j=0;j<=i;j++)
+         {
+           System.out.print("*");
+         }
+         System.out.println();
+       }
+		
+	}
+}
+---------------------------------------------------------------
+Number of Ways to Write a Number
+QUESTION DESCRIPTION
+
+Java Program to Find the Number of Ways to Write a Number as the Sum of Numbers Smaller than Itself
+TEST CASE 1
+
+INPUT
+6
+OUTPUT
+6 
+5 1 
+4 2 
+4 1 1 
+3 3 
+3 2 1 
+3 1 1 1 
+2 2 2 
+2 2 1 1 
+2 1 1 1 1 
+1 1 1 1 1 1 
+The number of ways to write a number as a sum of number smaller than itself is :10
+###############CODE###############
+import java.util.*;
+ 
+public class TestClass
+{
+    public static void print(int[] p, int n, int count) 
+    {
+        for (int i = 0; i < n; i++)
+            System.out.print(p[i] + " ");
+        System.out.println();
+        int j;
+        for (j = 0; j < n; j++) 
+        {
+            if (p[j] == 1)
+                continue;
+            else
+                break;
+        }
+        if (j == n)
+            System.out
+                    .println("The number of ways to write a number as a sum of number smaller than itself is :"
+                            + (count - 1));
+    }
+ 
+    public static void generateUniquePartition(int n) 
+    {
+        int[] p = new int[n];
+        int k = 0, count = 0;
+        p[k] = n;
+        while (true) 
+        {
+            count++;
+            print(p, k + 1, count);
+            int rem_value = 0;
+            while (k >= 0 && p[k] == 1) 
+            {
+                rem_value += p[k];
+                k--;
+            }
+            if (k < 0)
+                return;
+ 
+            p[k]--;
+            rem_value++;
+ 
+            while (rem_value > p[k]) 
+            {
+                p[k + 1] = p[k];
+                rem_value -= p[k];
+                k++;
+            }
+            p[k + 1] = rem_value;
+            k++;
+        }
+    }
+ 
+    public static void main(String args[]) 
+    {
+
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        generateUniquePartition(n);
+        sc.close();
+    }
+}
+--------------------------------------------------------------------------------------
+decimal into a binary number using stack
+QUESTION DESCRIPTION
+
+TO Convert a decimal into a binary number using stack.
+TEST CASE 1
+
+INPUT
+2
+OUTPUT
+10
+TEST CASE 2
+
+INPUT
+15
+OUTPUT
+1111
+###############CODE###############
+import java.util.*;
+ 
+/*  DecimalToBinaryUsingStacks  */
+public class TestClass
+{
+    public static void main(String[] args) 
+    {    
+        Scanner scan = new Scanner(System.in);
+        /* Creating Stack object  */
+        Stack<Integer> stk = new Stack<Integer>();
+        /* Accepting number */        
+       
+        int num = scan.nextInt();
+ 
+        while (num != 0)
+        {
+            int d = num % 2;
+            stk.push(d);
+            num /= 2;
+        }        
+        /* Print Binary equivalent */
+        while (!(stk.isEmpty() ))
+        {
+            System.out.print(stk.pop());
+        }
+        System.out.println();
+    }
+}
+-------------------------------------------------------------------------------
