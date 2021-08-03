@@ -1,0 +1,760 @@
+conversion from integer to float
+QUESTION DESCRIPTION
+
+java program to convert from int to float
+TEST CASE 1
+
+INPUT
+3
+OUTPUT
+3.0
+TEST CASE 2
+
+INPUT
+156
+OUTPUT
+156.0
+###############CODE###############
+import java.util.*;
+public class TestClass {
+	 public static void main(String[] args) { 
+      int i;
+      Scanner sc = new Scanner(System.in);
+      i = sc.nextInt();
+      float f = i;
+      System.out.println(f);
+    }
+     
+}
+------------------------------------------------------------------
+Complementary DNA
+QUESTION DESCRIPTION
+
+Deoxyribonucleic acid (DNA) is a chemical found in the nucleus of cells and carries the "instructions" for the development and functioning of living organisms.
+
+In DNA strings, symbols "A" and "T" are complements of each other, as "C" and "G".
+
+You have function with one side of the DNA, you need to get the other complementary side. DNA strand is never empty or there is no DNA at all.
+TEST CASE 1
+
+INPUT
+TTTT
+OUTPUT
+AAAA
+TEST CASE 2
+
+INPUT
+TAACG
+OUTPUT
+ATTGC
+###############CODE###############
+import java.io.*;
+import java.util.Scanner;
+public class TestClass {
+	 public static void main(String[] args) { 
+		
+       Scanner sc = new Scanner(System.in);
+       String str = sc.nextLine();
+       char[] ch = new char[str.length()];
+ 		for (int i = 0; i < str.length(); i++) { 
+            ch[i] = str.charAt(i);
+            if (ch[i] == 'T')
+              	ch[i] = 'A';
+          	else if(ch[i] == 'C')
+              	ch[i] = 'G';
+          	else if(ch[i] == 'A')
+              	ch[i] = 'T';
+          	else if(ch[i] == 'G')
+              	ch[i] = 'C';
+        } 
+       	for (char c : ch) { 
+            System.out.print(c); 
+        } 
+  		
+        
+     }
+  
+}
+---------------------------------------------------------------------
+Data types and Operators
+Q. 13: Type Casting problem
+QUESTION DESCRIPTION
+
+Get an integer as input and convert it to float via long data type.
+
+Output Values:
+
+1. Integer type
+
+2. Long Type
+
+3. Float Data type
+TEST CASE 1
+
+INPUT
+5212
+OUTPUT
+Int value 5212
+Long value 5212
+Float value 5212.0
+TEST CASE 2
+
+INPUT
+6723567
+OUTPUT
+Int value 6723567
+Long value 6723567
+Float value 6723567.0
+###############CODE###############
+import java.util.*;
+public class TestClass {
+	 public static void main(String[] args) { 
+     int i;
+     Scanner sc = new Scanner(System.in);
+     i = sc.nextInt();
+     float f = i;
+     long l = i;
+     System.out.println("Int value " +i);
+     System.out.println("Long value " +l);
+     System.out.println("Float value " +f);
+       
+		
+	}
+}
+---------------------------------------------------------------------
+composite number
+QUESTION DESCRIPTION
+
+Java Program to check for composite number
+TEST CASE 1
+
+INPUT
+94
+OUTPUT
+yes
+TEST CASE 2
+
+INPUT
+557
+OUTPUT
+no
+###############CODE###############
+import java.util.*;
+public class TestClass {
+	public static void main(String args[]) 
+	{ 
+		Scanner sc=new Scanner(System.in); 
+		int num=sc.nextInt(); 
+		int i=1,count=0; 
+		while(i<=num) 
+		{ 
+			if(num%i==0) 
+			{ 
+				count++; 
+			} 
+			i++; 
+		} 
+		if(count>2) 
+		{ 
+			System.out.println("yes"); 
+		} 
+		else 
+		{ 
+			System.out.println("no"); 
+		} 
+	} 
+}
+------------------------------------------------------------------------------------
+Data types and Operators
+Q. 15: Jewels and Stones
+QUESTION DESCRIPTION
+
+Soma is a fashionable girl. She absolutely loves shiny stones that she can put on as jewellery accessories.
+
+She has been collecting stones since her childhood - now she has become really good with identifying which ones are fake and which ones are not. Her King requested for her help in mining precious stones, so she has told him which all stones are jewels and which are not.
+
+Given her description, your task is to count the number of jewel stones.
+
+More formally, you're given a string J composed of latin characters where each character is a jewel.
+
+You are also given a string S composed of latin characters where each character is a mined stone. You have to find out how many characters of S are in J as well.
+
+First line contains an integer T denoting the number of test cases.
+
+Then follow T test cases. Each test case consists of two lines, each of which contains a string composed of English lower case and upper characters.
+
+First of these is the jewel string J and the second one is stone string S.
+You can assume that 1 <= T <= 100, 1 <= |J|, |S| <= 100
+
+Output
+Output for each test case, a single integer, the number of jewels mined.
+TEST CASE 1
+
+INPUT
+4
+abc
+abcdef
+aA
+abAZ
+aaa
+a
+what
+None
+OUTPUT
+3
+2
+1
+0
+TEST CASE 2
+
+INPUT
+3
+abc
+abcdfd
+aA
+asgdgg
+a
+what
+OUTPUT
+3
+1
+1
+###############CODE###############
+import java.io.*;
+import java.util.Scanner;
+public class TestClass {
+	 public static void main(String[] args) { 
+		Scanner scan = new Scanner(System.in);
+		int t = scan.nextInt();
+		scan.nextLine();
+		for(int i=0; i < t; i++) {
+		        int counter = 0;
+			String j = scan.nextLine();
+			String s = scan.nextLine();
+			for(int k=0; k < s.length(); k++) {
+			    for(int r=0; r < j.length(); r++) {
+			        if(s.charAt(k) == j.charAt(r)) {
+			            counter += 1;
+			            break;
+			        }
+			     }
+			}
+			System.out.println(counter);
+		}
+        
+     }
+  
+}
+----------------------------------------------------------------------------------
+Data types and Operators
+Q. 17: To check for equilateral triangle
+QUESTION DESCRIPTION
+
+java program to check for equilateral traingle with sides in terms of double data type
+TEST CASE 1
+
+INPUT
+2
+4
+10
+OUTPUT
+No
+TEST CASE 2
+
+INPUT
+5
+5
+5
+OUTPUT
+Yes
+###############CODE###############
+import java.io.*;
+import java.util.*;
+public class TestClass {
+	 public static void main(String[] args) { 
+     int a, b, c;
+     Scanner sc = new Scanner(System.in);
+     a = sc.nextInt();
+     b = sc.nextInt();
+     c = sc.nextInt();
+     if(a==b && b==c){
+       System.out.println("Yes");
+     }else{
+       System.out.println("No");
+     }
+		
+	}
+}
+---------------------------------------------------------------------
+counting number of digits
+QUESTION DESCRIPTION
+
+Java program to count the number of digits in a number
+TEST CASE 1
+
+INPUT
+1204
+OUTPUT
+4
+TEST CASE 2
+
+INPUT
+523678
+OUTPUT
+6
+###############CODE##############
+import java.io.*;
+import java.util.*;
+public class TestClass {
+	 public static void main(String[] args) { 
+     int count=0, num;
+     Scanner sc = new Scanner(System.in);
+     num = sc.nextInt();
+     while(num!=0){
+     num = num/10;
+       count++;
+     }
+       System.out.println(""+count);
+		
+	}
+}
+---------------------------------------------------------------------------
+check number is even or odd by using Shift operator
+QUESTION DESCRIPTION
+
+Program to check number is even or odd by using Shift operator
+TEST CASE 1
+
+INPUT
+15
+OUTPUT
+Odd
+TEST CASE 2
+
+INPUT
+94
+OUTPUT
+Even
+###############CODE###############
+import java.util.*;
+public class TestClass {
+	 public static void main(String[] args) { 
+     int i;
+     Scanner sc = new Scanner(System.in);
+     i = sc.nextInt();
+     if(i%2==0)
+     {
+       System.out.println("Even");
+     }else{
+       System.out.println("Odd");
+     }
+     }
+}
+----------------------------------------------------------------
+Conversion from integer to double
+QUESTION DESCRIPTION
+
+Java Program to convert from integer to double number
+TEST CASE 1
+
+INPUT
+23
+OUTPUT
+23
+TEST CASE 2
+
+INPUT
+512
+OUTPUT
+512
+###############CODE###############
+import java.io.*;
+import java.util.*;
+public class TestClass {
+	 public static void main(String[] args) { 
+		Scanner sc=new Scanner(System.in);
+       int a=sc.nextInt();
+       double d=(double)a;
+       System.out.println(d);
+	}
+}
+------------------------------------------------------------------------
+Small factorials
+QUESTION DESCRIPTION
+
+You are asked to calculate factorials of some small positive integers.
+
+Input
+
+An integer t, 1<=t<=100, denoting the number of testcases, followed by t lines, each containing a single integer n, 1<=n<=100.
+
+Output
+
+For each integer n given at input, display a line with the value of n!
+TEST CASE 1
+
+INPUT
+4
+1
+2
+5
+3
+OUTPUT
+1
+2
+120
+6
+###############CODE###############
+import java.io.*;
+import java.util.*;
+public class TestClass {
+	 public static void main(String[] args) { 
+       Scanner s=new Scanner(System.in);
+       int T;
+       T=s.nextInt();
+     while(T>0)
+     {
+       int i,fact=1;
+       int N=s.nextInt();
+       for(i=1;i<=N;i++)
+         {
+           fact=fact*i;
+         }
+         System.out.println(fact);
+
+     T--;}
+	}
+}
+------------------------------------------------------------------------------------
+Sum of Digits
+QUESTION DESCRIPTION
+
+You're given an integer N. Write a program to calculate the sum of all the digits of N.
+
+Input
+
+The first line contains an integer T, total number of testcases. Then follow T lines, each line contains an integer N.
+
+Output
+
+Calculate the sum of digits of N.
+
+Constraints
+
+1 T 1000
+1 N 100000
+TEST CASE 1
+
+INPUT
+3 
+12345
+31203
+2123
+OUTPUT
+15
+9
+8
+###############CODE###############
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+import java.util.Scanner;
+
+
+public class TestClass
+{
+	public static void main (String[] args) 
+	{
+		Scanner scanner = new Scanner(System.in);
+
+        int n = scanner.nextInt();
+
+        for (int i = 0; i < n; i ++) {
+            char[] chars = scanner.next().toCharArray();
+            int sum = 0;
+            for (char c : chars) {
+                sum += Character.getNumericValue(c);
+            }
+            System.out.println(sum);
+        }
+	}
+}
+---------------------------------------------------------------------------------
+Your Name is Mine
+QUESTION DESCRIPTION
+
+In an attempt to control the rise in population, Archer was asked to come up with a plan. This time he is targeting marriages. Archer, being as intelligent as he is, came up with the following plan:
+
+A man with name M is allowed to marry a woman with name W, only if M is a subsequence of W or W is a subsequence of M.
+
+A is said to be a subsequence of B, if A can be obtained by deleting some elements of B without changing the order of the remaining elements.
+
+Your task is to determine whether a couple is allowed to marry or not, according to Archer's rule.
+
+Input
+
+The first line contains an integer T, the number of test cases. T test cases follow. Each test case contains two space separated strings M and W.
+
+Output
+
+For each test case print "YES" if they are allowed to marry, else print "NO". (quotes are meant for clarity, please don't print them)
+
+Constraints
+
+1 T 100
+1 |M|, |W| 25000 (|A| denotes the length of the string A.)
+All names consist of lowercase English letters only.
+Example
+TEST CASE 1
+
+INPUT
+3
+john johanna
+ira ira
+kayla jayla
+OUTPUT
+YES
+YES
+NO
+TEST CASE 2
+
+INPUT
+2
+sohan soni
+tyrian tia
+OUTPUT
+NO
+YES
+###############CODE###############
+import java.io.*;
+import java.util.*;
+public class TestClass {
+	public static void main (String[] args)
+	{
+		Scanner sc = new Scanner(System.in);
+		int t = sc.nextInt();
+		
+		while(t-->0){
+		    String m = sc.next();
+		    String w = sc.next();
+		    String large;
+		    String small;
+		    
+		    if(m.length() > w.length()){
+		        large = m;
+		        small = w;
+		    }
+		    else{
+		        large = w;
+		        small = m;
+		    }
+		    int i, j = 0;
+		    for( i = 0; i < large.length() && j < small.length(); i++){
+		        if(small.charAt(j)==large.charAt(i)){
+		            j++;
+		        }
+		    }
+		    if(j == small.length()){
+		        System.out.println("YES");
+		    }
+		    else{
+		        System.out.println("NO");
+		    }
+		    
+		}
+	}
+}
+--------------------------------------------------------------------------------------
+Snape and Ladder
+QUESTION DESCRIPTION
+
+Professor Snape has lots of potions. Bottles containing all types of potions are stacked on shelves which cover the entire wall from floor to ceiling. Professor Snape has broken his bones several times while climbing the top shelf for retrieving a potion. He decided to get a ladder for him. But he has no time to visit Diagon Alley. So he instructed Ron Weasley to make a ladder for him. Professor Snape specifically wants a step ladder which looks like an inverted 'V' from side view.
+
+
+Professor just mentioned two things before vanishing-
+
+B - separation between left side (LS) and right side (RS) on the ground
+LS - the length of left side
+What should be the length of RS? At one extreme LS can be vertical and at other RS can be vertical. Ron is angry and confused. Since Harry is busy battling Voldemort, its your duty to help him find the minimum and maximum length of RS.
+
+Input
+
+First line contains single integer T, the number of test cases. Then T lines follow each containing 2 integers - B and LS.
+
+Output
+
+Output T lines, each containing minimum value of RS and maximum value of RS, separated by space. The answer (RS) will be considered correct if it has relative and absolute error less than 10-2.
+
+Constraints
+
+1 T 1000
+1 B < LS 1000
+TEST CASE 1
+
+INPUT
+3
+4 5
+10 12
+10 20
+OUTPUT
+3.0000 6.4031
+6.6332 15.6205
+17.3205 22.3607
+TEST CASE 2
+
+INPUT
+4
+4 5
+10 12
+10 21
+6 12
+OUTPUT
+3.0000 6.4031
+6.6332 15.6205
+18.4662 23.2594
+10.3923 13.4164
+###############CODE###############
+import java.util.*;
+public class TestClass{
+    
+ public static void main (String[] args) {
+     Scanner sc = new Scanner(System.in);
+     int t= sc.nextInt();
+     for(int i=0;i<t;i++){
+         int b = sc.nextInt();
+         int ls = sc.nextInt();
+         double rsmin = Math.sqrt(ls*ls - b*b);
+         double rsmax = Math.sqrt(ls*ls + b*b);
+         System.out.print(String.format("%.4f ",rsmin));
+         System.out.println(String.format("%.4f",rsmax));
+     }
+        
+    }
+}
+------------------------------------------------------------------------------------
+Simple Statistics
+QUESTION DESCRIPTION
+
+Sergey has made N measurements. Now, he wants to know the average value of the measurements made.
+
+In order to make the average value a better representative of the measurements, before calculating the average, he wants first to remove the highest K and the lowest K measurements. After that, he will calculate the average value among the remaining N - 2K measurements.
+
+Could you help Sergey to find the average value he will get after these manipulations?
+
+Input
+
+The first line of the input contains an integer T denoting the number of test cases. The description of T test cases follows.
+
+The first line of each test case contains two space-separated integers N and K denoting the number of measurements and the number of the greatest and the lowest values that will be removed.
+
+The second line contains N space-separated integers A1, A2, ..., AN denoting the measurements.
+
+Output
+
+For each test case, output a single line containing the average value after removing K lowest and K greatest measurements.
+
+Your answer will be considered correct, in case it has absolute or relative error, not exceeding 10-6.
+
+Constraints
+
+1 T 100
+1 N 104
+0 2K < N
+-106 Ai 106
+TEST CASE 1
+
+INPUT
+3
+5 1
+2 9 -10 25 1
+5 0
+2 9 -10 25 1
+3 1
+1 1 1
+OUTPUT
+4.000000
+5.400000
+1.000000
+###############CODE###############
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+public class TestClass
+{
+	public static void main (String[] args) 
+	{
+	
+		Scanner sc=new Scanner(System.in);
+		int T=sc.nextInt(),n,k;
+		int p,q;
+		double sum=0;
+		while(T-->0)
+		{
+		    sum=0;
+		   n=sc.nextInt();
+		   k=sc.nextInt();
+		   int[] arr=new int[n];
+		   for(int i=0;i<n;i++)
+		   arr[i]=sc.nextInt();
+		   Arrays.sort(arr);
+		   p=k;
+		   q=n-k-1;
+		   for(int i=p;i<=q;i++)
+		   sum+=arr[i];
+		   System.out.printf("%.6f\n",sum/(n-2*k));
+		}
+		
+	}
+}
+-----------------------------------------------------------------------------------
+Second Largest
+QUESTION DESCRIPTION
+
+Three numbers A, B and C are the inputs. Write a program to find second largest among three numbers.
+
+Input
+
+The first line contains an integer T, total number of testcases. Then follow T lines, each line contains three integers A, B and C.
+
+Output
+
+Display the second largest among A, B and C.
+
+Constraints
+
+1 T 1000
+1 A,B,C 1000000
+TEST CASE 1
+
+INPUT
+3 
+120 11 400
+10213 312 10
+10 3 450
+OUTPUT
+120
+312
+10
+###############CODE###############
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+public class TestClass{
+	public static void main (String[] args) 
+	{
+		
+		Scanner sc = new Scanner(System.in);
+		int t= sc.nextInt();
+		while(t>0){
+		      int[] arr = new int[3];
+		      for(int i=0 ; i<3 ; i++){
+		            arr[i] = sc.nextInt();
+		      }
+		      Arrays.sort(arr);
+		      System.out.println(arr[1]);
+		      t--;
+		}
+		sc.close();
+	}
+}
+------------------------------------------------------------------------------------
