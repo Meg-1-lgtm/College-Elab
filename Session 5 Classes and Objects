@@ -978,3 +978,500 @@ public class TestClass
     }
 }
 ---------------------------------------------------------------------------------------
+Find Reminder
+QUESTION DESCRIPTION
+
+Write a program to find the remainder when two given numbers are divided.
+
+Input
+The first line contains an integer T, total number of test cases. Then follow T lines, each line contains two Integers A and B.
+
+Output
+Find remainder when A is divided by B.
+
+Mandatory:
+
+1. Create a new class Reminder and the objectname for the class should be "f"
+
+2. Create a methods as follows:
+
+a. Method name = computeReminder()
+b. Type = void
+c. Access Specifier = public
+d. Argument Type = no arguments
+
+3. Access the methods computeReminder() using the object name "f" from the main method and display the computed reminder.
+
+TEST CASE 1
+
+INPUT
+5
+19 5
+73 4
+7 3
+18 4
+68 2
+OUTPUT
+4
+1
+1
+2
+0
+TEST CASE 2
+
+INPUT
+4
+12 6
+45 3
+78 4
+17 2
+OUTPUT
+0
+0
+2
+1
+###############CODE###############
+import java.util.*;
+public class TestClass {
+	 public static void main(String[] args) { 
+       Reminder f=new Reminder();
+       f.computeReminder();
+		
+	}
+	}
+	class Reminder{
+    public void computeReminder()
+    {
+      Scanner ob=new Scanner(System.in);
+      int T=ob.nextInt();
+      for(int i=0;i<T;i++)
+      {
+        int n1=ob.nextInt();
+        int n2=ob.nextInt();
+        System.out.println(n1%n2);
+    }
+  }
+}
+---------------------------------------------------------------------------
+TAX CALCULATOR
+QUESTION DESCRIPTION
+
+Declare the following in the TestClass with the following private data members :
+
+int basicSalary;
+int daPercentage;
+int hraPercentage;
+float taxAmount;
+float takeHomeSalary;
+
+Include the following functions initializeData() --- 3 arguments are passed.
+
+The order of the arguments is values for the basicSalary, daPercentage and hra Percentage.
+
+calculateTaxAmount() --- 1 argument which corresponds to taxPercentage(int) is passed.
+
+The default value for taxPercentage is 5%.
+
+calculate takeHomeSalary() and display all the details using displayData()
+
+TestCase 1:
+
+10000 = Basic Pay
+DA = 10 Percentage of Basic Pay
+HRA = 20 Percentage of Basic Pay
+Tax to be paid 5 % of Total pay (Basic + HRA + DA)
+Take home salary = Total pay - Tax
+
+55000 = Basic Pay
+DA = 15 Percentage of Basic Pay
+HRA = 10 Percentage of Basic Pay
+Tax to be paid 5 % of Total pay (Basic + HRA + DA)
+Take home salary = Total pay - Tax
+
+Note: Only for Second employee the Tax percentage needs to be given by the user and for the first employee the Tax Percentage id 5% and use DecimalFormat class to round of values to two digits
+TEST CASE 1
+
+INPUT
+10000
+10
+20
+55000
+15
+10
+ 5
+OUTPUT
+Basic Salary is 10000
+DA amount is 1000.00
+HRA amount is 2000.00
+Total Salary is 13000.00
+Tax to be paid is 650.00
+Take Home Salary is 12350.00
+Basic Salary is 55000
+DA amount is 8250.00
+HRA amount is 5500.00
+Total Salary is 68750.00
+Tax to be paid is 3437.50
+Take Home Salary is 65312.50
+TEST CASE 2
+
+INPUT
+15000
+10
+15
+71000
+20
+10
+15
+OUTPUT
+Basic Salary is 15000
+DA amount is 1500.00
+HRA amount is 2250.00
+Total Salary is 18750.00
+Tax to be paid is 937.50
+Take Home Salary is 17812.50
+Basic Salary is 71000
+DA amount is 14200.00
+HRA amount is 7100.00
+Total Salary is 92300.00
+Tax to be paid is 13845.00
+Take Home Salary is 78455.00
+###############CODE###############
+import java.io.*;
+import java.util.Scanner;
+import java.text.DecimalFormat;
+public class TestClass {
+  
+  	  private int basicSalary;
+      private int daPercentage;
+      private int hraPercentage;
+      private float taxAmount;
+      private float takeHomeSalary;
+  	  private float TS;
+  	  private float t1;
+  	  private float t2;
+      
+  
+  	  public void initializeData(int a, int b, int c){
+        
+        basicSalary = a;
+        daPercentage = b;
+        hraPercentage = c;
+             
+      }
+  	  public void calculateTaxAmount(int P)	{
+        
+        //int TP;
+        daPercentage = (basicSalary * daPercentage)/100;
+        t1 = (float)daPercentage;
+        hraPercentage = (basicSalary * hraPercentage)/100;
+        t2 = (float)hraPercentage;
+        TS = basicSalary + daPercentage + hraPercentage;
+        taxAmount = (TS * P)/100;
+        
+        
+      }
+       public void takeHomeSalary()
+       {
+         takeHomeSalary = TS - taxAmount;
+       }
+      public void displayData() {
+        System.out.println("Basic Salary is "+basicSalary);
+        System.out.format("DA amount is %.2f\n", t1);
+        System.out.format("HRA amount is %.2f\n",t2);
+        System.out.format("Total Salary is %.2f\n",TS);
+        System.out.format("Tax to be paid is %.2f\n",taxAmount);
+        System.out.format("Take Home Salary is %.2f\n",takeHomeSalary);
+        
+      }
+	 public static void main(String[] args) { 
+		
+       Scanner sc = new Scanner(System.in);
+       int bp = sc.nextInt();
+       int da = sc.nextInt();
+       int hra = sc.nextInt();
+       TestClass t1 = new TestClass();
+       t1.initializeData(bp, da, hra);
+       t1.calculateTaxAmount(5);
+       t1.takeHomeSalary();
+       t1.displayData();
+       bp = sc.nextInt();
+       da = sc.nextInt();
+       hra = sc.nextInt();
+       int p = sc.nextInt();
+       TestClass t2 = new TestClass();
+       t2.initializeData(bp, da, hra);
+       t2.calculateTaxAmount(p);
+       t2.takeHomeSalary();
+       t2.displayData();
+	}
+} 
+-------------------------------------------------------------------------------
+Reverse Array
+QUESTION DESCRIPTION
+
+Java program to reverse an array
+Mandatory:
+
+1. Create a new class Reverse and the objectname for the class should be "obj"
+
+2. Create two methods as follows:
+
+a. Method name = getInput()
+b. Type = void
+c. Access Specifier = public
+d. Argument Type = no arguments
+
+a. Method name = arrayReverse()
+b. Type = void
+c. Access Specifier = public
+d. Argument Type = no arguments
+
+3. Access the methods getInput() and arrayReverse() using the object name "obj" from the main method
+
+4. The input details are promoted in getInput() and the result were printed in arrayReverse()
+TEST CASE 1
+
+INPUT
+5 
+6 9 14 2 11
+OUTPUT
+11 2 14 9 6
+TEST CASE 2
+
+INPUT
+4 
+23 69 25 14
+OUTPUT
+14 25 69 23
+###############CODE###############
+import java.io.*;
+import java.util.*;
+class Reverse
+{
+  public 
+    int n;
+    int a[]=new int[10];
+  Scanner s=new Scanner(System.in);
+  public void getInput()
+  {
+    n=s.nextInt();
+    for(int i=0;i<n;i++)
+    {
+   a[i]=s.nextInt();
+    }
+  }
+  public void arrayReverse()
+  { 
+    for(int i=n-1;i>=0;i--)
+      {
+   System.out.print(a[i]+" ");
+    }
+  }
+}
+public class TestClass {
+	 public static void main(String[] args) { 
+		Reverse obj=new Reverse();
+       obj.getInput();
+       obj.arrayReverse();
+	}
+}
+----------------------------------------------------------------------------
+Rotating Single word
+QUESTION DESCRIPTION
+
+Write a java program to reverse each word of a given string.
+
+For example,
+
+If Java Concept Of The Day is input string then output should be avaJ tpecnoC fO ehT yaD
+
+Mandatory:
+
+1. Create a class "Rotate" with one method as follows
+
+a. Method Name = reverseEachWordOfString
+b. Return type = void
+c. Access Specifier = public
+d. Argument = One Argument of type String and actual argument variable name as "inputString"
+
+2. Access the method from the main method using "objname".methodname that takes one argument in String and the variable name is "inputstring"
+TEST CASE 1
+
+INPUT
+Mahendra Singh Dhoni
+OUTPUT
+ardnehaM hgniS inohD
+TEST CASE 2
+
+INPUT
+Suresh Raina
+OUTPUT
+hseruS aniaR
+###############CODE###############
+import java.io.*;
+import java.util.Scanner;
+class Rotate {
+ 
+  	public void reverseEachWordOfString(String inputString) {
+      
+      String words[] = inputString.split(" ");
+      for (int i = 0;i < words.length;i++)
+      {
+        	StringBuilder temp = new StringBuilder(words[i]);
+        	System.out.print(temp.reverse()+" ");
+        	
+      }
+      
+    }
+  
+}
+public class TestClass {
+	 public static void main(String[] args) { 
+		
+       Rotate objname = new Rotate();
+       Scanner sc = new Scanner(System.in);
+       String inputstring = sc.nextLine();
+       objname.reverseEachWordOfString(inputstring);
+       
+	}
+}
+---------------------------------------------------------------------------
+Sum of two Squares
+QUESTION DESCRIPTION
+
+Given an integer N, check if it is possible to represent it as a sum of two squares of integers.
+Input:
+First line of input contains an integer T, denoting number of test cases. Then T lines follow, each of them consisting of exactly one integer N.
+
+Output:
+For each test case output 1 if it is possible to represent given number as a sum of two squares and 0 if it is not possible.
+
+1. Create a method as follows in the main class TestClass
+
+a. Method name = Search()
+b. Type = static
+c. Access Specifier = public
+d. Argument Type = one argument of type int
+
+public static int Search(int b)
+
+2.Get the input using scanner in the main class and pass the value to the Search() method as argument.
+
+3.Do the required computation inside the Search() method.
+
+4.Print the result in main class.
+TEST CASE 1
+
+INPUT
+8
+5 9 11 19 52 20 33 15
+OUTPUT
+1
+1
+0
+0
+1
+1
+0
+0
+TEST CASE 2
+
+INPUT
+6
+18 10 6 4 7 15
+OUTPUT
+1
+1
+0
+1
+0
+0
+###############CODE###############
+import java.io.*;
+import java.util.Scanner;
+public class TestClass {
+  	 public int Search(int b){
+        int count=0;
+       	for(int i=1;i<b;i++){
+          	if((i*i)!=b){
+                for(int j=i;j<b;j++){
+                    if(((j*j)+(i*i))==b){
+                        count=1;
+                    }
+                }
+            }
+          else{
+          		return 1;
+          }
+        }
+        return count;
+     }
+	 public static void main(String[] args) { 
+		TestClass objname=new TestClass();
+        Scanner sc=new Scanner(System.in);
+        int t=sc.nextInt();
+        int a[]=new int[t];
+        for(int i=0;i<t;i++){
+          a[i]=sc.nextInt();	
+          System.out.println(objname.Search(a[i]));
+        }
+     }
+}
+--------------------------------------------------------------------------
+Swapping of Two Numbers
+QUESTION DESCRIPTION
+
+
+Read two numbers from the keyboard
+
+Using Arithmetic operators + and - perform Swapping on given two numbers.
+
+Mandatory
+1.Create another class apart from the main class (TestClass)
+2.Inside the newly created class create three methods namely swap(),read(),display()
+3.Call those three methods from the main class using the object named "s1"
+TEST CASE 1
+
+INPUT
+89 45
+OUTPUT
+45
+89
+TEST CASE 2
+
+INPUT
+78 19
+OUTPUT
+19
+78
+###############CODE###############
+import java.io.*;
+import java.util.Scanner;
+class Swap{
+  	private int a,b;
+  	public void read(){
+      Scanner sc=new Scanner(System.in);
+      a=sc.nextInt();
+      b=sc.nextInt();
+    }
+  	public void swap(){
+      a=a+b;
+      b=a-b;
+      a=a-b;
+    }
+  	public void display(){
+      System.out.println(a);
+      System.out.println(b);
+    }
+}
+public class TestClass {
+	 public static void main(String[] args) { 
+		Swap s1=new Swap();
+       	s1.read();
+       	s1.swap();
+       	s1.display();
+	}
+}
+---------------------------------------------------------------------------
+
+  
