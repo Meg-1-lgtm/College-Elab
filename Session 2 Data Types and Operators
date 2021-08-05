@@ -76,8 +76,7 @@ public class TestClass {
   
 }
 ---------------------------------------------------------------------
-Data types and Operators
-Q. 13: Type Casting problem
+Type Casting problem
 QUESTION DESCRIPTION
 
 Get an integer as input and convert it to float via long data type.
@@ -165,8 +164,7 @@ public class TestClass {
 	} 
 }
 ------------------------------------------------------------------------------------
-Data types and Operators
-Q. 15: Jewels and Stones
+Jewels and Stones
 QUESTION DESCRIPTION
 
 Soma is a fashionable girl. She absolutely loves shiny stones that she can put on as jewellery accessories.
@@ -246,8 +244,7 @@ public class TestClass {
   
 }
 ----------------------------------------------------------------------------------
-Data types and Operators
-Q. 17: To check for equilateral triangle
+To check for equilateral triangle
 QUESTION DESCRIPTION
 
 java program to check for equilateral traingle with sides in terms of double data type
@@ -758,3 +755,143 @@ public class TestClass{
 	}
 }
 ------------------------------------------------------------------------------------
+Conversion from binary to decimal
+QUESTION DESCRIPTION
+
+Java Program to convert from binary to decimal number
+TEST CASE 1
+
+INPUT
+1101
+OUTPUT
+13
+TEST CASE 2
+
+INPUT
+111
+OUTPUT
+7
+###############CODE###############
+import java.io.*;
+import java.util.Scanner;
+public class TestClass {
+	 public static void main(String[] args) { 
+		Scanner input = new Scanner( System.in );
+       String binaryString =input.nextLine();
+       System.out.println(Integer.parseInt(binaryString,2));
+	}
+}
+------------------------------------------------------------------------------------
+Conversion from Octal to hexadecimal
+QUESTION DESCRIPTION
+
+Java Program to convert from octal to hexadecimal number
+TEST CASE 1
+
+INPUT
+15
+OUTPUT
+d
+TEST CASE 2
+
+INPUT
+1023
+OUTPUT
+213
+###############CODE###############
+import java.io.*;
+import java.util.Scanner;
+public class TestClass {
+	 public static void main(String[] args) { 
+       Scanner sc=new Scanner(System.in);
+       String octal=sc.nextLine();
+       int decimal;
+       String hexadecimal;
+       decimal=Integer.parseInt(octal,8);
+       hexadecimal=Integer.toHexString(decimal);
+       System.out.println(hexadecimal);
+		
+	}
+}
+----------------------------------------------------------------------------------
+Reverse number
+QUESTION DESCRIPTION
+
+Write a program to print reverse of a number of the given number
+TEST CASE 1
+
+INPUT
+1234
+OUTPUT
+4321
+TEST CASE 2
+
+INPUT
+12
+OUTPUT
+21
+###############CODE###############
+import java.io.*;
+import java.util.Scanner;
+public class TestClass {
+	 public static void main(String[] args) { 
+       
+       int num , reversed = 0;
+       Scanner in = new Scanner(System.in);
+       num = in.nextInt();
+
+        while(num != 0) {
+            int digit = num % 10;
+            reversed = reversed * 10 + digit;
+            num /= 10;
+        }
+
+        System.out.println( + reversed);
+		
+	}
+}
+---------------------------------------------------------------------------
+IMEI Number
+QUESTION DESCRIPTION
+
+Java program to check for IMEI number
+
+The International Mobile Equipment Identity (IMEI) number is a unique identification or serial number that all mobile phones and smartphones have. It is normally 15 digits long.
+
+The IMEI number can be found on the silver sticker on the back of your phone, under the battery pack, or on the box your phone came in.
+
+You can also display the IMEI number on the screen of your mobile phone or smartphone by entering *#06# into the keypad.
+
+Hint: If the number length if equal to 15 then it can be termed as IMEI Number
+TEST CASE 1
+
+INPUT
+490154203237518
+OUTPUT
+YES
+TEST CASE 2
+
+INPUT
+65412248
+OUTPUT
+NO
+###############CODE###############
+import java.io.*;
+import java.util.*;
+public class TestClass {
+  public static void main(String[] args) { 
+    int count =0;
+    Scanner s = new Scanner(System.in);
+    long n=s.nextLong();
+    while(n!=0)
+    {
+      n/=10;
+      count++;
+    }
+    if(count==15)
+    System.out.println("YES");
+    else
+     System.out.println("NO");
+  }  
+}
+-----------------------------------------------------------------------------------
