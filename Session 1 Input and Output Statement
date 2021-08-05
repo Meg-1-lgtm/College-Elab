@@ -819,5 +819,297 @@ public class TestClass {
 }
 *******************************************************************************
 *******************************************************************************
+Energy
+QUESTION DESCRIPTION
+
+Write a program that calculates the energy needed to heat water from an initial temperature to a final temperature.
+
+Your program should prompt the user to enter the amount of water in kilograms and the initial and final temperatures of the water. The formula to compute the energy is Q = M * (finalTemperature initialTemperature) * 4184
+
+Where M is the weight of water in kilograms, temperatures are in degrees Celsius, and energy Q is measured in joules.
+
+Use Double Data Type
+TEST CASE 1
+
+INPUT
+340 12 90
+OUTPUT
+The energy needed is=1.1095968E8
+TEST CASE 2
+
+INPUT
+500 12 34
+OUTPUT
+The energy needed is=4.6024E7
+*******************************************************************************
+CODING:
+import java.io.*;
+import java.util.*;
+public class TestClass {
+  public static void main(String[] args) { 		
+    Scanner Sc = new Scanner(System.in);
+    int a = Sc.nextInt();
+    int b = Sc.nextInt();
+    int c = Sc.nextInt();
+    double q = a * (c-b) * 4184;
+    System.out.println("The energy needed is=" + q);
+  }
+}
+******************************************************************************
+******************************************************************************
+Display it
+QUESTION DESCRIPTION
+
+Create a program that displays your name and complete mailing address formatted in
+the manner that you would usually see it on the outside of an envelope. Your program
+needs to read any input from the user.
+TEST CASE 1
+
+INPUT
+Ramesh
+ramesh@gmail.com
+Coimbatore
+603203
+OUTPUT
+Ramesh
+ramesh@gmail.com
+Coimbatore
+603203
+TEST CASE 2
+
+INPUT
+suresh
+ramesh@gmail.com
+chennai
+603203
+OUTPUT
+suresh
+ramesh@gmail.com
+chennai
+603203
+********************************************************************************
+CODING:
+import java.io.*;
+import java.util.Scanner;
+public class TestClass {
+	 public static void main(String[] args) { 
+		Scanner in = new Scanner(System.in);
+       String n,e,ad;
+       n=in.nextLine();
+       e=in.nextLine();
+       ad=in.nextLine();
+       int a=in.nextInt();
+       System.out.println(n);
+       System.out.println(e);
+       System.out.println(ad);
+       System.out.println(a);
+	}
+}
+**********************************************************************************
+**********************************************************************************
+Physics: acceleration
+QUESTION DESCRIPTION
+
+Average acceleration is defined as the change of velocity divided by the time taken to make the change, as shown in the following formula:
+
+a=v1-v0 / t
+
+Write a program that prompts the user to enter the starting velocity v0 in meters/ second, the ending velocity v1 in meters/second, and the time span t in seconds, and displays the average acceleration
+
+
+Use Data Type as Double
+TEST CASE 1
+
+INPUT
+12
+21
+3
+OUTPUT
+3.0
+TEST CASE 2
+
+INPUT
+3
+92
+19
+OUTPUT
+4.684210526315789
+******************************************************************************
+CODING:
+import java.util.*;
+public class TestClass {
+	 public static void main(String[] args) {
+       double ini;
+       double fin;
+       double a;
+       double t;
+       Scanner obj=new Scanner(System.in);
+       ini=obj.nextDouble();
+       fin=obj.nextDouble();
+       t=obj.nextDouble();
+       a=(fin-ini)/t;
+       System.out.print(a);
+		
+	}
+}
+********************************************************************************
+********************************************************************************
+Wind-chill temperature
+QUESTION DESCRIPTION
+
+How cold is it outside? The temperature alone is not enough to provide the answer. Other factors including wind speed, relative humidity, and sunshine play important roles in determining coldness outside.
+
+In 2001, the National Weather Service (NWS) implemented the new wind-chill temperature to measure the coldness using temperature and wind speed.
+
+The formula is twc = 35.74 + 0.6215ta - 35.75v^0.16 + 0.4275tav^0.16
+
+where ta is the outside temperature measured in degrees Fahrenheit and v is the speed measured in miles per hour. twc is the wind-chill temperature.
+
+The formula cannot be used for wind speeds below 2 mph or temperatures below -58 F or above 41F.
+
+Write a program that prompts the user to enter a temperature between -58 F and 41F and a wind speed greater than or equal to 2 and displays the wind-chill temperature.
+
+Use Math.pow(a, b) to compute v0.16
+
+Use of Data type and String.Format("%.2f", value)
+TEST CASE 1
+
+INPUT
+48.9
+120.43
+OUTPUT
+The wind chill index is 34.18
+TEST CASE 2
+
+INPUT
+51.2
+121.44
+OUTPUT
+The wind chill index is 37.68
+*************************************************************************
+CODING:
+import java.io.*;
+import java.util.Scanner;
+public class TestClass {
+	 public static void main(String[] args) { 
+       Scanner sc =new Scanner (System.in);
+       double temperature = sc.nextDouble();
+       double v=sc.nextDouble();
+       double twc=35.74+0.6215*temperature-35.75*Math.pow(v,0.16)+0.4275*temperature*Math.pow(v,0.16);
+       String output = String.format("%.2f",twc);
+       System.out.println("The wind chill index is "+output);
+	}
+}	
+*****************************************************************************
+*****************************************************************************
+Add Two Integers
+QUESTION DESCRIPTION
+
+Write a java program to declare two integer variables and get input from user. Add the two input variables and display the answer as output
+TEST CASE 1
+
+INPUT
+2 2
+OUTPUT
+4
+TEST CASE 2
+
+INPUT
+5 3
+OUTPUT
+8
+******************************************************************************
+CODING:
+import java.io.*;
+import java.util.Scanner;
+public class TestClass {
+  public static void main(String[] args) { 		
+    Scanner sc = new Scanner(System.in);
+    int n1 = sc.nextInt();
+    int n2 = sc.nextInt();
+    System.out.println(n1+n2);
+  }
+}
+*****************************************************************************
+*****************************************************************************
+Area of Rhombus
+QUESTION DESCRIPTION
+
+Java Program to find area of rhombus
+TEST CASE 1
+
+INPUT
+60
+40
+OUTPUT
+1200
+TEST CASE 2
+
+INPUT
+50
+10
+OUTPUT
+250
+*******************************************************************************
+CODING:
+import java.io.*;
+import java.util.Scanner;
+public class TestClass {
+	 public static void main(String[] args) { 
+     Scanner sc=new Scanner(System.in);
+     int a=sc.nextInt();
+     int b=sc.nextInt();
+     int c=(a*b)/2;
+     System.out.println(c);
+	}
+}
+***********************************************************************************
+***********************************************************************************
+Solve me First
+QUESTION DESCRIPTION
+
+Welcome to HackerRank! The purpose of this challenge is to familiarize you with reading input from stdin (the standard input stream) and writing output to stdout (the standard output stream) using our environment.
+
+Review the code provided in the editor below, then complete the solveMeFirst function so that it returns the sum of two integers read from stdin. Take some time to understand this code so you're prepared to write it yourself in future challenges.
+
+Select a language below, and start coding!
+
+Input Format
+
+Code that reads input from stdin is provided for you in the editor. There are lines of input, and each line contains a single integer.
+
+Output Format
+
+Code that prints the sum calculated and returned by solveMeFirst is provided for you in the editor.
+TEST CASE 1
+
+INPUT
+2 3
+OUTPUT
+5
+TEST CASE 2
+
+INPUT
+17
+15
+OUTPUT
+32
+*********************************************************************************
+CODING:
+import java.io.*;
+import java.util.Scanner;
+public class TestClass {
+	 public static void main(String[] args) { 
+		
+       Scanner sc = new Scanner(System.in);
+       int n1 = sc.nextInt();
+       int n2 = sc.nextInt();
+       
+       System.out.println(n1 + n2);
+       
+	}
+} 
+************************************************************************************
+************************************************************************************
 
 
