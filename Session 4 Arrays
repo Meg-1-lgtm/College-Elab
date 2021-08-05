@@ -891,3 +891,301 @@ public class TestClass {
     }
 }
 -------------------------------------------------------------------------------
+Decimal to Binary
+QUESTION DESCRIPTION
+
+The decimal or denary counting system uses the Base-of-10 numbering system where each digit in a number takes on one of ten possible values, called digits, from 0 to 9, eg. 21310 (Two Hundred and Thirteen).
+
+But as well as having 10 digits ( 0 through 9 ), the decimal numbering system also has the operations of addition ( + ), subtraction ( ), multiplication ( ) and division ( ).
+
+In a decimal system each digit has a value ten times greater than its previous number and this decimal numbering system uses a set of symbols, b, together with a base, q, to determine the weight of each digit within a number. For example, the six in sixty has a lower weighting than the six in six hundred. Then in a binary numbering system we need some way of converting Decimal to Binary as well as back from Binary to Decimal.
+
+Any numbering system can be summarised by the following relationship:
+
+N = bi qi
+where: N is a real positive number
+b is the digit
+q is the base value
+and integer (i) can be positive, negative or zero
+TEST CASE 1
+
+INPUT
+5
+OUTPUT
+101
+TEST CASE 2
+
+INPUT
+17
+OUTPUT
+10001
+###############CODE###############
+import java.io.*;
+import java.util.Scanner;
+public class TestClass {
+	 public static void main(String[] args) {
+       int n,count = 0, a;
+       String x = "";
+		Scanner s = new Scanner(System.in);
+       n=s.nextInt();
+       while(n>0)
+       {
+         a=n%2;
+        /* if(a==1){count++;}*/ //for counting the no. of 1's
+         x=a+""+x;
+         n=n/2;
+       }
+       System.out.println(x);
+       
+         
+	}
+}
+----------------------------------------------------------------------------------
+Quick Sort
+QUESTION DESCRIPTION
+
+Write a java program to perform Quick Sort
+TEST CASE 1
+
+INPUT
+10
+11 90 56 34 22 23 67 45 77 43
+OUTPUT
+11 22 23 34 43 45 56 67 77 90
+TEST CASE 2
+
+INPUT
+5
+29 67 34 11 94
+OUTPUT
+11 29 34 67 94
+###############CODE###############
+import java.io.*;
+import java.util.Scanner;
+public class TestClass 
+{
+    public static void sort(int[] arr)
+    {
+        quickSort(arr, 0, arr.length - 1);
+    }
+   public static void quickSort(int arr[], int low, int high) 
+    {
+        int i = low, j = high;
+        int temp;
+        int pivot = arr[(low + high) / 2];
+         while (i <= j) 
+        {
+            while (arr[i] < pivot)
+                i++;
+            while (arr[j] > pivot)
+                j--;
+            if (i <= j) 
+            {
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+ 
+                i++;
+                j--;
+            }
+    }
+      if (low < j)
+            quickSort(arr, low, j);
+         if (i < high)
+            quickSort(arr, i, high);
+    }
+    public static void main(String[] args) 
+    {
+        Scanner scan = new Scanner( System.in );        
+        int n, i;
+        n = scan.nextInt();
+        int arr[] = new int[ n ];
+        for (i = 0; i < n; i++)
+            arr[i] = scan.nextInt();
+        sort(arr);
+             for (i = 0; i < n; i++)
+            System.out.print(arr[i]+" ");            
+        System.out.println();            
+    }    
+
+}
+---------------------------------------------------------------------------------------
+IDENTIFY COMMON ELEMENTS
+QUESTION DESCRIPTION
+
+Write a program to identify common elements or numbers between two given arrays. You should not use any inbuilt methods are list to find common values.
+
+Input: Length of arrays.
+
+Output:Common Elements
+TEST CASE 1
+
+INPUT
+5 5
+1 2 3 4 5
+3 4 5 6 7
+OUTPUT
+3 4 5 
+TEST CASE 2
+
+INPUT
+3 3
+6 8 1
+7 8 9
+OUTPUT
+8 
+###############CODE###############
+import java.io.*;
+import java.util.Scanner;
+public class TestClass {
+	 public static void main(String[] args) { 
+		Scanner sc=new Scanner(System.in);
+       int x,y;
+       x=sc.nextInt();
+       y=sc.nextInt();
+       int a[]=new int[x];
+       int b[]=new int[y];
+       for(int i=0;i<x;i++){
+       		a[i]=sc.nextInt();
+       }
+       for(int i=0;i<y;i++){
+       		b[i]=sc.nextInt();
+       }
+       for(int i=0;i<x;i++){
+       		for(int j=0;j<y;j++){
+            	if(a[i]==b[j]){
+                	System.out.print(a[i]+" ");
+                }
+            }
+       }
+	}
+}
+-------------------------------------------------------------------------------
+Merge Two Sorted Arrays
+QUESTION DESCRIPTION
+
+You have to merge the two sorted arrays into one sorted array (in non-increasing order)
+
+Input:
+
+First line contains an integer T, denoting the number of test cases.
+First line of each test case contains two space separated integers X and Y, denoting the size of the two sorted arrays.
+Second line of each test case contains X space separated integers, denoting the first sorted array P.
+Third line of each test case contains Y space separated integers, denoting the second array Q.
+
+
+Output:
+
+For each test case, print (X + Y) space separated integer representing the merged array.
+
+
+Constraints:
+
+1 <= T <= 100
+1 <= X, Y <= 5*104
+0 <= Pi, Qi <= 109
+TEST CASE 1
+
+INPUT
+1
+4 5
+7 5 3 1
+9 8 6 2 0
+OUTPUT
+9 8 7 6 5 3 2 1 0 
+TEST CASE 2
+
+INPUT
+2
+2 3
+9 2
+7 5 8
+3 4
+5 1 9
+11 15 4 8
+OUTPUT
+9 8 7 5 2 
+15 11 9 8 5 4 1 
+###############CODE###############
+import java.io.*;
+import java.util.Scanner;
+import java.util.Arrays;
+public class TestClass {
+	 public static void main(String[] args) { 
+		Scanner sc=new Scanner(System.in);
+       int t=sc.nextInt();
+       while(t-->0){
+       	 int n=sc.nextInt();
+         int m=sc.nextInt()+n;
+         int a[]=new int[m];
+         for(int i=0;i<m;i++)
+           a[i]=sc.nextInt();
+          
+         Arrays.sort(a);
+         
+         for(int i=m-1;i>=0;--i)
+         System.out.print(a[i]+" ");
+      
+         System.out.println();
+       }
+	}
+}
+--------------------------------------------------------------------------------
+2D matrix
+QUESTION DESCRIPTION
+
+Create a simple two dimensional array program and print the array value
+
+The first input corresponds to row value of the matrix and the second value denotes to the column value of the matrix
+TEST CASE 1
+
+INPUT
+3
+5
+OUTPUT
+0 1 2 3 4 
+5 6 7 8 9 
+10 11 12 13 14
+TEST CASE 2
+
+INPUT
+4
+5
+OUTPUT
+0 1 2 3 4 
+5 6 7 8 9 
+10 11 12 13 14 
+15 16 17 18 19
+###############CODE###############
+import java.io.*;
+import java.util.Scanner;
+public class TestClass {
+	 public static void main(String[] args) { 
+		
+       Scanner sc = new Scanner(System.in);
+       
+       int r = sc.nextInt();
+       int c = sc.nextInt();
+       
+       int[][] arr = new int[r][c];
+       int k = 0;
+       for (int i = 0;i < r;i++){
+         
+        	for (int j = 0;j < c;j++) {
+              	arr[i][j] = k;
+         		k++;
+            }
+       }
+       
+       
+       for (int i = 0;i < r;i++){
+         
+        	for (int j = 0;j < c;j++)
+              	System.out.print(arr[i][j]+" ");
+         	System.out.println();
+       }
+       
+       
+	}
+} 
+------------------------------------------------------------------------------------
