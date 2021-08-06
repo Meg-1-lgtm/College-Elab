@@ -1,0 +1,962 @@
+bobThere
+QUESTION DESCRIPTION
+
+Return true if the given string contains a "bob" string, but where the middle 'o' character can be any character.
+
+Mandatory:
+
+1. Create a method named "bobThere(String str)" which takes one String argument inside mainclass (Testclass)
+
+Method name = bobThere
+Argument = single argument with type argument String
+Method Type = boolean
+Access Specifier = static method
+
+2. Use boolean type to store the final answer in the main method and print the final answer either as "true" or "false"
+
+Hint for second mandatory:
+boolean output= bobThere(str)
+System.out.println(output)
+use "return" in the bobThere(String str) method
+TEST CASE 1
+
+INPUT
+abcbob
+OUTPUT
+true
+TEST CASE 2
+
+INPUT
+b9b
+OUTPUT
+true
+###############CODE###############
+import java.util.*;
+public class TestClass 
+{
+	public static boolean bobThere(String str) {
+    for(int i = 0; i < str.length() - 2; i++) {
+        if(str.charAt(i) == 'b' && str.charAt(i + 2) == 'b')
+            return true;
+    }
+                
+    return false;
+    }
+  	public static void main(String[] args) 
+    { 
+			Scanner sc=new Scanner(System.in);
+      		String s=sc.next();
+      		if(TestClass.bobThere(s))
+              	System.out.println("true");
+      		else
+              	System.out.println("false");
+	}
+}
+---------------------------------------------------------------------------------
+Determinant
+QUESTION DESCRIPTION
+
+Write a java method to find the determinant of given matrix.
+
+Mandatory:
+
+1.Under the Main Class(TestClass) create the following methods to get the input values and to calculate the determinant respectively.
+
+2. Method Details:
+
+a. Method Name = input ()
+b. Access Specifier = public
+c. Argument = No argument
+d. Return type = void
+
+public void input()
+
+a. Method Name =determinant ()
+b. Access Specifier = public
+c. Argument = Two Arguments of type integer
+d. Return type = void
+
+public int determinant(int A[][],int N)
+
+3.Create an object "d" for the main class in the main method and access input() and determinant() method from the main method to print the result of the determinant calculation using System.out.println class.
+
+Note:
+If all the above conditions are not satisfied then it wont show 100%
+TEST CASE 1
+
+INPUT
+3
+6 1 1
+4 -2 5
+2 8 7
+OUTPUT
+-306
+TEST CASE 2
+
+INPUT
+2
+1 2
+3 4
+OUTPUT
+-2
+###############CODE###############
+import java.io.*;
+import java.util.Scanner;
+public class TestClass {
+  
+  	private int l;
+  	private int[][] mat;
+  
+  	public void input()
+    {
+      Scanner sc = new Scanner(System.in);
+      l = sc.nextInt();
+      mat = new int[l][l];
+	  for(int i=0;i < mat.length;i++)
+      {
+            for(int j=0;j < mat[i].length;j++)
+                mat[i][j]=sc.nextInt();
+      }
+    }
+  
+  	public int determinant(int A[][],int N)
+    {
+      int x,y,z;
+      if (N == 3)
+      {
+        x=(A[0][0]*(A[1][1]*A[2][2]-A[1][2]*A[2][1]));
+        y=(A[0][1]*(A[1][0]*A[2][2]-A[1][2]*A[2][0]));
+        z=(A[0][2]*(A[1][0]*A[2][1]-A[1][1]*A[2][0]));
+      }
+      else
+      {
+       	x = A[0][0]*A[1][1];
+        y = A[0][1]*A[1][0]; 
+        z = 0;
+      }
+     
+      return x-y+z;
+    }
+    public static void main(String[] args) { 
+		
+       TestClass d = new TestClass();
+       d.input();
+       System.out.println(d.determinant(d.mat, d.l));
+       
+	}
+}
+-----------------------------------------------------------------------------
+Equal or Unequal
+QUESTION DESCRIPTION
+
+Override equals method to compare two complex numbers are equal or not.
+Input Format : two complex numbers
+Output Format : print "Equal" if they are equal otherwise "Not Equal".
+
+Mandatory:
+
+1.Create a Class named "Complex"
+2.Then create a method with the following details to get real and imaginary part of the complex number.
+
+Method name = Complex
+Arguments = Two arguments of type double
+Access specifier - public
+
+public Complex(double re, double im)
+
+Method name = equals
+Arguments = One argument (Instance variable "o" of type Object)
+Return type - boolean
+Access specifier - public
+
+public boolean equals(Object o)
+
+3.Override the method equals to compare two complex objects
+Conditions to check inside the equals method
+If the variable "o" is an instance of itself and return true
+if the variable "o" is a instance of complex or null return false
+
+4.Typecast "o" to compare two data members
+Complex c = (Complex) o;
+
+5.Compare the data members and return accordingly
+return Double.compare(re, c.re) == 0 && Double.compare(im, c.im) == 0;
+
+6. Get four inputs from the user in the main method with variable names as "a" , "b", "x" and "y" of type integer
+
+7. Create two object named c1 and c2 for the class Complex from the main method of the main class(TestClass) to get two complex numbers.
+
+8.Then compare two complex numbers.If it is equal then print "Equal" else print "Not Equal"
+TEST CASE 1
+
+INPUT
+45 90
+45 90
+OUTPUT
+Equal
+TEST CASE 2
+
+INPUT
+89 76
+89 67
+OUTPUT
+Not Equal
+###############CODE###############
+import java.io.*;
+import java.util.Scanner;
+
+class Complex {
+ 
+  	private double re,im;
+  
+  	public Complex(double re, double im)
+    {
+      	this.re = re;
+      	this.im = im;
+    }
+  
+  	@Override
+    public boolean equals(Object o) { 
+     
+        if (o == this) { 
+            return true; 
+        } 
+  
+        if (!(o instanceof Complex)) { 
+            return false; 
+        } 
+       
+        Complex c = (Complex) o; 
+          
+        return Double.compare(re, c.re) == 0 && Double.compare(im, c.im) == 0; 
+    } 
+  	
+}
+public class TestClass {
+	 public static void main(String[] args) { 
+		
+       Scanner sc = new Scanner(System.in);
+       int a = sc.nextInt();
+       int b = sc.nextInt();
+       int x = sc.nextInt();
+       int y = sc.nextInt();
+       
+       Complex c1 = new Complex(a,b);
+       Complex c2 = new Complex(x,y);
+       if (c1.equals(c2)) { 
+            System.out.println("Equal"); 
+        } else { 
+            System.out.println("Not Equal"); 
+        } 
+	}
+} 
+----------------------------------------------------------------------------------
+Sum of Adjacent Elements - Method and Array
+QUESTION DESCRIPTION
+
+Given an array of integers, find the pair of adjacent elements that has the largest sum and return that sum
+
+Input Format:
+An array of integers containing at least 2 elements
+
+Output :
+An integer The largest sum of adjacent elements.
+
+Example
+
+For inputArray = [3, 6, -2, -5, 7, 3], the output should be adjacentElementsSum(inputArray) = 10.
+
+7 and 3 produce the largest sum.
+
+Mandatory:
+
+1. Create a class "Sample" with two following method:
+
+2. Method Details:
+
+a. Method Name = adajcentElementsSum ()
+b. Access Specifier = public
+c. Argument = Two arguments [Array elements and array length] of type integer , In first test- case the array elements are 18,34,22,-19,31,-29,12 and array length is 7
+d. Return type = integer , It returns the largest sum of adjacent elements to the main method
+
+3. Access the adajcentElementsSum(int arr[],int n) in "Sample" class from main method class (TestClass)
+
+Note:
+The method definition should have variables as "arr[]" and "n" public int adajcentElementsSum(int arr[],int n)
+Return the largest sum after calculating sadjacentsum in the method to the main method
+TEST CASE 1
+
+INPUT
+7
+18 34 22 -19 31 -29 12
+OUTPUT
+56
+TEST CASE 2
+
+INPUT
+8
+49 91 34 -41 -32 73 -50 45
+OUTPUT
+140
+###############CODE###############
+import java.io.*;
+import java.util.Scanner;
+class Sample{
+  Scanner sc=new Scanner(System.in);
+    int temp;
+  public int adjacentElementsSum(int[] arr,int n){
+    temp=arr[0]+arr[1];
+    for(int i=0;i<n-1;i++){
+      if((arr[i]+arr[i+1])>temp){
+        temp=arr[i]+arr[i+1];
+        }
+      }
+    return temp;
+    }
+  }
+public class TestClass {
+	 public static void main(String[] args) { 
+       Scanner sc=new Scanner(System.in);
+       Sample obj=new Sample();
+       int a=sc.nextInt();
+       int[] b=new int[a];
+       for(int i=0;i<a;i++){
+         b[i]=sc.nextInt();
+         }
+       int c=obj.adjacentElementsSum(b,a);
+       System.out.println(c);
+ }
+}
+--------------------------------------------------------------------------------
+Factorial using classes and objects
+QUESTION DESCRIPTION
+
+Write a Java program to find factorial of a given number using recursive function and class and objects
+
+Note: factorial of 1 and 0 is 1
+
+Mandatory:
+
+1. Create a new class "Sample "and a method called "fact" with return type as integer and the method takes one argument of type integer [ public int fact(int n) ]
+
+2. Create an instance "objname" to access the "fact" method from the main method under main class (TestClass)
+
+3. The "fact" method must return factorial of the number (integer type) and the final output should be printed in the main method.
+
+Hint for 3rd Mandatory Case:
+int answer = objname.fact(num)
+System.out.println(answer)
+TEST CASE 1
+
+INPUT
+8
+OUTPUT
+40320
+TEST CASE 2
+
+INPUT
+5
+OUTPUT
+120
+###############CODE###############
+	import java.io.*;
+import java.util.*;
+public class TestClass 
+{
+	 public static void main(String[] args)
+     { 
+	  Sample objname=new Sample();
+       Scanner scanner = new Scanner(System.in);
+    int num = scanner.nextInt();
+     // int num;
+      int answer = objname.fact(num);
+      System.out.println(answer);
+     } 
+}
+  class Sample
+  {
+	//Scanner scanner = new Scanner(System.in);
+    //int n = scanner.nextInt();
+    int output;
+   public int fact(int n) 
+   {
+       if(n==1)
+       {
+         return 1;
+       }
+       output = fact(n-1)* n;
+       return output;
+	}
+}
+----------------------------------------------------------------------------------
+Alternating subarray prefix
+QUESTION DESCRIPTION
+
+There's an array A consisting of N non-zero integers A1..N. A subarray of A is called alternating if any two adjacent elements in it have different signs (i.e. one of them should be negative and the other should be positive).
+
+For each x from 1 to N, compute the length of the longest alternating subarray that starts at x - that is, a subarray Ax..y for the maximum possible y x. The length of such a subarray is y-x+1.
+
+Input
+The first line of the input contains an integer T - the number of test cases.
+The first line of each test case contains N.
+The following line contains N space-separated integers A1..N
+
+Output
+For each test case, output one line with N space-separated integers - the lengths of the longest alternating subarray starting at x, for each x from 1 to N.
+
+Mandatory:
+
+1. Create a new class and the class should have method as follows:
+
+a. Method name = subarray()
+b. Method Type = void
+c. Method arguments = no arguments
+d. Access Specifiers = public
+
+2. The method "subarray()" needs to be accessed from the main method class(TestClass) to perform all operations.
+
+3. The objectname to access subarray method is "objname"
+TEST CASE 1
+
+INPUT
+3
+4
+1 2 3 4
+4
+1 -5 1 -5
+6
+-5 -1 -1 2 -2 -3
+OUTPUT
+1 1 1 1 
+4 3 2 1 
+1 1 3 2 1 1
+TEST CASE 2
+
+INPUT
+1
+4
+1 -5 1 -5
+OUTPUT
+4 3 2 1
+###############CODE###############
+import java.io.*;
+import java.util.Scanner;
+public class TestClass {
+	 public static void main(String[] args) { 
+       Sample objname=new Sample();
+       objname.subarray();
+		
+	}
+}
+class Sample{
+  public void subarray(){
+    Scanner sc=new Scanner(System.in);
+    int t=sc.nextInt();
+    while(t-->0){
+      int n=sc.nextInt();
+      int arr[]=new int[n];
+      for(int i=0;i<n;i++){
+        int x=sc.nextInt();
+        if(x>0)
+          arr[i]=1;
+        else
+          arr[i]=-1;
+       }
+     for(int i=0;i<n;i++){
+        int sum=1;
+        for(int j=i;j<n-1;j++){
+          if(arr[j]==-arr[j+1]){
+            sum++;
+          }
+          else{
+            j=n;
+          }
+         }
+        System.out.print(sum+" ");
+      }
+      System.out.println();
+    }
+  }
+}
+-----------------------------------------------------------------------------------
+Fibonacci sequence with static method
+QUESTION DESCRIPTION
+
+The Fibonacci sequence is defined by the following rule. The first 2 values in the sequence are 1, 1. Every subsequent value is the sum of the 2 values preceding it.
+
+Write a Java program that uses both recursive and non recursive functions to print the n th value of the Fibonacci sequence.
+
+Mandatory :
+
+1.Create a new class called "Sample" and two static methods as follows
+
+a. Method name = getInput()
+b. Type = void
+c. Access specifiers = static
+d. Arguments = No argument
+
+a. a. Method name = displayFib()
+b. Type = void
+c. Access specifiers = static
+d. Arguments = No argument
+
+2. Access the methods (getInput() and displayFib()) using classname.methodname
+
+Example: Sample.displayFib()
+TEST CASE 1
+
+INPUT
+5
+OUTPUT
+1 1 2 3 5
+TEST CASE 2
+
+INPUT
+10
+OUTPUT
+1 1 2 3 5 8 13 21 34 55
+###############CODE###############
+import java.io.*;
+import java.util.Scanner;
+class Sample {
+ 
+  	private static int num;
+  	static void getInput()
+    {
+      Scanner sc = new Scanner(System.in);
+      num = sc.nextInt();
+    }
+  	static void displayFib()
+    {
+        int a = 0;
+      	int b = 1;
+      	int c;
+		for (int i = 1;i <= num;i++)
+        {
+          	c = a + b;
+            a = b;
+          	b = c;
+          	System.out.print(a+" ");
+        }
+    }
+  
+}
+public class TestClass {
+	 public static void main(String[] args) { 
+		
+       Sample.getInput();
+       Sample.displayFib();
+	}
+} 
+----------------------------------------------------------------------------------
+Find the Century
+QUESTION DESCRIPTION
+
+Given a year, return the century it is in. The first century spans from the year 1 up to and including the year 100, the second - from the year 101 up to and including the year 200, etc.
+
+Example
+
+For year = 1905, the output should be
+centuryFromYear(year) = 20
+For year = 1700, the output should be
+centuryFromYear(year) = 17
+
+Mandatory:
+
+1.Create a new class and two methods as follows
+
+a. Method name = getInput() - To get the Year Input and access the method centuryFromYear(year)
+b. Type = void
+c. Access specifiers = public
+d. Arguments = No argument
+
+a. Method name = centuryFromYear(year)
+b. Type = void
+c. Access specifiers = public
+d. Arguments = One argument with type integer and variable name as "year"
+
+2. Create object for above mentioned class in the main method and the object name as "objname"
+
+3. Access the methods in the main method as objname.getInput()
+
+4. Access the method "centuryFromYear(year)" from the getInput() method
+TEST CASE 1
+
+INPUT
+1905
+OUTPUT
+20
+TEST CASE 2
+
+INPUT
+456
+OUTPUT
+5
+###############CODE###############
+import java.io.*;
+import java.util.Scanner; 
+import java.util.*;
+class Century{
+  Scanner sc=new Scanner(System.in);
+  int year;
+   public void getInput(){
+   year=sc.nextInt();
+   centuryFromYear(year);
+     }
+   public void centuryFromYear(int year){
+    if(year%100==0){
+      year=year/100;
+      System.out.println(year);
+      }
+     else{
+       year=year/100+1;
+     System.out.println(year);
+       }
+  }
+}
+public class TestClass {
+	 public static void main(String[] args) { 
+       Scanner sc=new Scanner(System.in);
+       Century objname=new Century();
+       objname.getInput();
+   	}
+}
+--------------------------------------------------------------------------------
+Radius of Earth
+QUESTION DESCRIPTION
+
+Write a Java program to compute the distance between two points on the surface of earth.
+
+x1 = Math.toRadians(lat1)
+y1 = Math.toRadians(lon1)
+x2 = Math.toRadians(lat2)
+x3 = Math.toRadians(lon2)
+
+Distance between the two points [ (x1,y1) & (x2,y2)]
+
+d = radius * arccos(sin(x1) * sin(x2) + cos(x1) * cos(x2) * cos(y1 - y2))
+
+Radius of the earth r = 6371.01 Kilometers
+
+Mandatory:
+
+1. Create a new class "Sample" and a method named "distanceBetweenTwoPoints()" of type double
+
+2. The method should take four arguments with double data type
+
+public double distanceBetweenTwoPoints(double lat1, double lon1, double lat2, double lon2)
+
+Methodname = distanceBetweenTwoPoints
+Argument = Four Arguments - double lat1, double lon1, double lat2, double lon2 of type double with variable names mentioned in the argument
+Access Specifier = public
+Return Type = double
+
+
+3. Access the method "public double distanceBetweenTwoPoints(double lat1,double lon1,double lat2,double lon2)" inside the main method under main class (TestClass)
+
+4. Use return to pass the final value computed in distanceBetweenTwoPoints to the main method
+
+5. The final answer should be rounded using String.format("%.02f", variablename)
+
+TEST CASE 1
+
+INPUT
+25 35 35.5 25.5
+OUTPUT
+1480.08
+TEST CASE 2
+
+INPUT
+12 28 13.5 12.3
+OUTPUT
+1710.55
+###############CODE###############
+import java.io.*;
+import java.util.Scanner;
+class Sample{
+	public double distanceBetweenTwoPoints(double lat1,double lon1,double lat2,double lon2){
+    	double x1=Math.toRadians(lat1);
+      	double y1=Math.toRadians(lon1);
+      	double x2=Math.toRadians(lat2);
+      	double y2=Math.toRadians(lon2);
+      	double radiusEarth=6371.01;
+        double d=radiusEarth*Math.acos(Math.sin(x1)*Math.sin(x2)+Math.cos(x1)*Math.cos(x2)*Math.cos(y1-y2));
+      	return d;
+    }
+}
+public class TestClass {
+	 public static void main(String[] args) { 
+		Sample s=new Sample();
+        Scanner sc=new Scanner(System.in);
+        double distance=s.distanceBetweenTwoPoints(sc.nextDouble(),sc.nextDouble(),sc.nextDouble(),sc.nextDouble());
+        System.out.println(String.format("%.02f",distance));
+	}
+}
+-----------------------------------------------------------------------------------
+PrintThird
+QUESTION DESCRIPTION
+
+Write a java method to print all the third characters in a given string
+
+Mandatory:
+
+1. Create a class and method as follows:
+
+a. Method name = getInput()
+b. Argument = No argument
+c. Return Type = void
+d. Access specifier = public
+e. Usuage = To get the string input and access the method calculateThird()
+
+a. Method name = calculateThird()
+b. Argument = One Argument that take String input and variable name as "s" - Method Definition
+c. Return type = void
+d. Access Specifier = public
+
+Hint : public void calculateThird(String s)
+
+2. Call the method getInput() from the main method by creating an instance of the class.
+
+3. Call the method calculateThird(input) from the getInput() method and the formal argument variable name should be "input" and actual arguments should be "s"
+TEST CASE 1
+
+INPUT
+Bogar
+OUTPUT
+g
+TEST CASE 2
+
+INPUT
+Siddhar
+OUTPUT
+d
+###############CODE###############
+import java.io.*;
+import java.util.Scanner;
+public class TestClass {
+	 public static void main(String[] args) { 
+		new Third().getInput();
+	}
+}
+class Third{
+  public void getInput(){
+    Scanner sc=new Scanner(System.in);
+    String input=sc.next();
+    calculateThird(input);
+  }
+  public void calculateThird(String s){
+    System.out.print(s.charAt(2));
+  }
+}
+-----------------------------------------------------------------------------
+Fibonacci sequence
+QUESTION DESCRIPTION
+
+The Fibonacci sequence is defined by the following rule. The first 2 values in the sequence are 1, 1. Every subsequent value is the sum of the 2 values preceding it.
+
+Write a Java program that uses both recursive and non recursive functions to print the n th value of the Fibonacci sequence.
+
+Mandatory :
+
+1.Create a new class and two methods as follows
+
+a. Method name = getInput()
+b. Type = void
+c. Access specifiers = public
+d. Arguments = No argument
+
+a. a. Method name = displayFib()
+b. Type = void
+c. Access specifiers = public
+d. Arguments = No argument
+
+2. Create object for above mentioned class in the main method and access the methods getInput() and displayFib()
+TEST CASE 1
+
+INPUT
+5
+OUTPUT
+1 1 2 3 5
+TEST CASE 2
+
+INPUT
+10
+OUTPUT
+1 1 2 3 5 8 13 21 34 55
+###############CODE###############
+import java.io.*;
+import java.util.Scanner;
+class Sample
+{
+  Scanner in = new Scanner(System.in);
+   int a=1,b=1,n;
+  public void getInput()
+  {
+    n=in.nextInt();
+  }
+  public void displayFib()
+  {
+    System.out.print(a+" "+b);
+    for(int i=2;i<n; i++)
+    {
+      int c=a+b;
+      System.out.print(" "+c);
+      a=b;
+      b=c;
+    }
+  }
+}  
+    
+public class TestClass {
+	 public static void main(String[] args) { 
+		Sample objname= new Sample();
+        objname.getInput();
+       objname.displayFib();
+	}
+}
+-------------------------------------------------------------------------------
+Average
+QUESTION DESCRIPTION
+
+Design a class Average with a method findAverage() which computes average of 3 numbers
+
+Mandatory:
+
+1. Create a class "Average" with two static methods and four static variables "static int num1,num2,num3,total"
+
+2. Method 1
+
+a. Method Name = getInput()
+b.Access Specifier = static
+c. Argument = No Arguments
+d. Method Return type = void
+e. Usage = To get the three numbers and call findAverage() method
+
+3. Method 2
+
+a. Method Name = findAverage()
+b.Access Specifier = static
+c. Argument = No argument
+d. Method Return type = void
+
+4. Access the method getInput() under class "Average" from the main method using classname.methodname
+
+5. Access the method findAverage() from the getInput() method
+
+Note: Do not access findAverage() from the main method, it needs to be accessed only from getInput() .
+TEST CASE 1
+
+INPUT
+78 23 12
+OUTPUT
+37
+TEST CASE 2
+
+INPUT
+82 32 24
+OUTPUT
+46
+###############CODE###############
+import java.io.*;
+import java.util.Scanner;
+class Average
+{
+ static Scanner in = new Scanner(System.in);
+  static int num1,num2,num3,total;
+  static void getInput()
+  {
+    num1=in.nextInt();
+    num2=in.nextInt();
+    num3=in.nextInt();
+    findAverage();
+  }
+  static void findAverage()
+  {
+    total=(num1+num2+num3)/3;
+    System.out.println(total);
+  }
+}
+
+public class TestClass {
+  
+	 public static void main(String[] args) { 
+	   Average.getInput();
+	}
+}
+-----------------------------------------------------------------------------------
+Product with same static method name and different arguments
+QUESTION DESCRIPTION
+
+Write a methods that returns the product of two numbers and product of three numbers.
+
+The method name should be same
+
+Example
+
+For param1 = 1, param2 = 2 and param3 = 3, the output should be
+product(param1, param2) = 2.
+product(param1, param2, param3) = 6
+
+
+Mandatory:
+
+1. Create two methods with same name and same type in the main class (TestClass) as follows:
+
+Method name = productTwo
+Arguments = Two arguments of type integer
+Return type - integer
+Access specifier - static
+
+Method name = productTwo
+Arguments = Three arguments of type integer
+Return type - integer
+Access specifier - static
+
+2. Get three inputs from the user in the main method with variable names as "num1" , "num2", "num3" of type integer
+
+3. Call or access the methods "productTwo(num1,num2)" and "productThree(num1,num2,num3)" from the main method using classname.methodname
+
+4. The final returned value from the methods should be printed in the main method itself.
+
+Hint for 4th Mandatory Test Case:
+
+a. System.out.println(TestClass.productTwo(num1,num2))
+b. System.out.println(TestClass.productTwo(num1,num2,num3))
+TEST CASE 1
+
+INPUT
+4 5 12
+OUTPUT
+20
+240
+TEST CASE 2
+
+INPUT
+6 3 10
+OUTPUT
+18
+180
+###############CODE###############
+import java.io.*;
+import java.util.*;
+public class TestClass {
+  static int productTwo(int num1,int num2)
+  {
+    return num1*num2;
+  }
+  static int productTwo(int num1,int num2,int num3)
+  {
+    return num1*num2*num3;
+  }
+	 public static void main(String[] args) { 		
+      Scanner s=new Scanner(System.in);
+       int num1,num2,num3;
+       num1=s.nextInt();
+       num2=s.nextInt();
+       num3=s.nextInt();
+       System.out.println(TestClass.productTwo(num1,num2));
+       System.out.println(TestClass.productTwo(num1,num2,num3));
+	}
+}
+---------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
